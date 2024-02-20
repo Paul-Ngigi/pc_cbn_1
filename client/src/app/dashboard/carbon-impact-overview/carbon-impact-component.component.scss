@@ -1,0 +1,47 @@
+.impact-wrappeR{
+  border-radius: 16px;
+  background: var(--Color, #FFF);
+  display: flex;
+  width: 100%;
+  padding: 24px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+}
+
+.impact-containeR {
+  display: flex;
+  gap: 120px;
+  }
+
+  .impact-iteM {
+    justify-content: center;
+    align-items: center;
+    padding-right: 120px;
+  }
+
+  .line{
+    border-right: 1px solid var(--Peer-Carbon-Mint, #E4FCE6);
+  }
+
+  .impact-texT p {
+      color: var(--cool-gray-700, #374151);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%; /* 24px */
+    }
+
+    .impact-texT .kill {
+        font-size: 20px;
+  
+      }
+    
+
+  span{
+    color: var(--cool-gray-700, var(--Peer-Carbon-Grey, #A7B3A7));
+      font-size: 20px;
+  }
+
+
+

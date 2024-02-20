@@ -1,0 +1,105 @@
+<div class="flex gap-[15px] w-12/12">
+    <div class="left w-8/12 block">
+        <div class="impact flex justify-between items-center shadow-md bg-[#FCF5EB] rounded-[16px] py-[30px] px-[20px]">
+            <div class="flex flex-col gap-[13px]">
+                <div class="text-[#5E896E] text-[12px] font-[700] leading-[150%]">Total positive impact  so  far</div>
+                <div class="text-[#5E896E] text-[24px] font-[700] leading-[150%]">35,000 kg CO2e</div>
+                <div class="text-[#5E896E] text-[12px] font-[400] leading-[150%]">That's the same as  manufacturing 13,860 plastic bootles</div>
+            </div>
+            <div class="img">
+                <img src="/assets/images/ghe.png" alt="green house effect" />
+            </div>
+        </div>
+        <div class="flex flex-col my-[20px] text-[#FFF] shadow-md rounded-[8px] gap-[24px] p-[8px]">
+            <div class="mt-[24px] ml-[16px] text-[22px] text-[#111618] font-[600]">Carbon Emissions Forecast</div>
+            <app-forecast-chart></app-forecast-chart>
+        </div>
+        <div class="">
+            <div class="flex flex-col my-12">
+                <div class="-m-1.5 overflow-x-auto">
+                    <div class="p-1.5 min-w-full inline-block align-middle">
+                    <div class="overflow-hidden">
+                        <table class="min-w-full rounded-[12px] divide-y">
+                        <thead>
+                            <tr class="bg-[#F9FAFB]">
+                            <th scope="col" class="px-6 py-4 text-left text-[12px] font-[600] leading-[150%] text-[#6B7280]">Project</th>
+                            <th scope="col" class="px-6 py-4 text-left text-[12px] font-[600] leading-[150%] text-[#6B7280]">Team</th>
+                            <th scope="col" class="px-6 py-4 text-left text-[12px] font-[600] leading-[150%] text-[#6B7280]">Deadline</th>
+                            <th scope="col" class="px-6 py-4 text-left text-[12px] font-[600] leading-[150%] text-[#6B7280]">Progress</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="odd:bg-[#F9FAFB] even:bg-[#fff] hover:bg-[#F9FAFB]" *ngFor="let data of tabledata">
+                            <td class="px-6 py-4 whitespace-nowrap text-[16px] font-[400] text-[#111827]">{{data.project}}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-[16px] font-[400] text-[#111827]">
+                                <div class="imgs flex">
+                                    <img src="{{data.team[0]}}" alt="team pic">
+                                    <img src="{{data.team[0]}}" alt="team pic">
+                                    <img src="{{data.team[0]}}" alt="team pic">
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-[16px] font-[400] text-[#111827]">{{data.deadline}}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-[16px] font-[400] text-[#111827]">{{data.progress}}%</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right w-4/12 block">
+        <div class="flex w-12/12 py-[100px] px-[15px] rounded-[8px] border-l-2 border-b-2 border-[grey]">
+            <div class="left flex flex-col gap-[13px] w-8/12">
+                <div class="text-[#5E896E] text-[40px] font-[700]">350 <span class="text-[16px] font-[700] leading-[150%]">tCO2e</span></div>
+                <div class="text-[#5E896E] text-[16px] font-[500] leading-[150%]">Your net zero target</div>
+            </div>
+            <div class="right w-4/12 h-[30px] flex justify-end">
+                <div class="flex px-[2px] py-[10px] justify-center items-center rounded-[10px] bg-[#DEF7EC]">
+                    +1.5% 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                    fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M11.9994 13.5C11.7342 13.5 11.4799 13.6054 11.2923 13.7929C11.1048 13.9805 10.9994 14.2348 10.9994 14.5C10.9994 14.7653 11.1048 15.0196 11.2923 15.2071C11.4799 15.3947 11.7342 15.5 11.9994 15.5H16.9994C17.2646 15.5 17.519 15.3947 17.7065 15.2071C17.8941 15.0196 17.9994 14.7653 17.9994 14.5V9.50004C17.9994 9.23482 17.8941 8.98047 17.7065 8.79293C17.519 8.6054 17.2646 8.50004 16.9994 8.50004C16.7342 8.50004 16.4799 8.6054 16.2923 8.79293C16.1048 8.98047 15.9994 9.23482 15.9994 9.50004V12.086L11.7064 7.79304C11.5189 7.60557 11.2646 7.50025 10.9994 7.50025C10.7343 7.50025 10.48 7.60557 10.2924 7.79304L7.99943 10.086L3.70643 5.79304C3.51783 5.61088 3.26523 5.51009 3.00303 5.51237C2.74083 5.51465 2.49002 5.61981 2.30461 5.80522C2.1192 5.99063 2.01403 6.24144 2.01176 6.50364C2.00948 6.76584 2.11027 7.01844 2.29243 7.20704L7.29243 12.207C7.47996 12.3945 7.73427 12.4998 7.99943 12.4998C8.2646 12.4998 8.5189 12.3945 8.70643 12.207L10.9994 9.91404L14.5854 13.5H11.9994Z"
+                      fill="#03543F" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="flex w-12/12 py-[100px] px-[15px] rounded-[8px] border-l-2 border-b-2 border-[grey]">
+            <div class="left flex flex-col gap-[13px] w-8/12">
+                <div class="text-[#5E896E] text-[40px] font-[700]">40 <span class="text-[16px] font-[700] leading-[150%]">%</span></div>
+                <div class="text-[#5E896E] text-[16px] font-[500] leading-[150%]">Year to date perfomance</div>
+            </div>
+            <div class="right w-4/12 h-[30px] flex justify-end">
+                <div class="flex px-[2px] py-[10px] justify-center items-center rounded-[10px] bg-[#DEF7EC]">
+                    +1.5% 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                    fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M11.9994 13.5C11.7342 13.5 11.4799 13.6054 11.2923 13.7929C11.1048 13.9805 10.9994 14.2348 10.9994 14.5C10.9994 14.7653 11.1048 15.0196 11.2923 15.2071C11.4799 15.3947 11.7342 15.5 11.9994 15.5H16.9994C17.2646 15.5 17.519 15.3947 17.7065 15.2071C17.8941 15.0196 17.9994 14.7653 17.9994 14.5V9.50004C17.9994 9.23482 17.8941 8.98047 17.7065 8.79293C17.519 8.6054 17.2646 8.50004 16.9994 8.50004C16.7342 8.50004 16.4799 8.6054 16.2923 8.79293C16.1048 8.98047 15.9994 9.23482 15.9994 9.50004V12.086L11.7064 7.79304C11.5189 7.60557 11.2646 7.50025 10.9994 7.50025C10.7343 7.50025 10.48 7.60557 10.2924 7.79304L7.99943 10.086L3.70643 5.79304C3.51783 5.61088 3.26523 5.51009 3.00303 5.51237C2.74083 5.51465 2.49002 5.61981 2.30461 5.80522C2.1192 5.99063 2.01403 6.24144 2.01176 6.50364C2.00948 6.76584 2.11027 7.01844 2.29243 7.20704L7.29243 12.207C7.47996 12.3945 7.73427 12.4998 7.99943 12.4998C8.2646 12.4998 8.5189 12.3945 8.70643 12.207L10.9994 9.91404L14.5854 13.5H11.9994Z"
+                      fill="#03543F" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="flex w-12/12 py-[100px] px-[15px] rounded-[8px] border-l-2 border-[grey]">
+            <div class="left flex flex-col gap-[13px] w-8/12">
+                <div class="text-[#5E896E] text-[40px] font-[700]">4350 <span class="text-[16px] font-[700] leading-[150%]">tCO2e</span></div>
+                <div class="text-[#5E896E] text-[16px] font-[500] leading-[150%]">Emission avoided target</div>
+            </div>
+            <div class="right w-4/12 h-[30px] flex justify-end">
+                <div class="flex px-[2px] py-[10px] justify-center items-center rounded-[10px] bg-[#DEF7EC]">
+                    +1.5% 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                    fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M11.9994 13.5C11.7342 13.5 11.4799 13.6054 11.2923 13.7929C11.1048 13.9805 10.9994 14.2348 10.9994 14.5C10.9994 14.7653 11.1048 15.0196 11.2923 15.2071C11.4799 15.3947 11.7342 15.5 11.9994 15.5H16.9994C17.2646 15.5 17.519 15.3947 17.7065 15.2071C17.8941 15.0196 17.9994 14.7653 17.9994 14.5V9.50004C17.9994 9.23482 17.8941 8.98047 17.7065 8.79293C17.519 8.6054 17.2646 8.50004 16.9994 8.50004C16.7342 8.50004 16.4799 8.6054 16.2923 8.79293C16.1048 8.98047 15.9994 9.23482 15.9994 9.50004V12.086L11.7064 7.79304C11.5189 7.60557 11.2646 7.50025 10.9994 7.50025C10.7343 7.50025 10.48 7.60557 10.2924 7.79304L7.99943 10.086L3.70643 5.79304C3.51783 5.61088 3.26523 5.51009 3.00303 5.51237C2.74083 5.51465 2.49002 5.61981 2.30461 5.80522C2.1192 5.99063 2.01403 6.24144 2.01176 6.50364C2.00948 6.76584 2.11027 7.01844 2.29243 7.20704L7.29243 12.207C7.47996 12.3945 7.73427 12.4998 7.99943 12.4998C8.2646 12.4998 8.5189 12.3945 8.70643 12.207L10.9994 9.91404L14.5854 13.5H11.9994Z"
+                      fill="#03543F" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

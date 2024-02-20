@@ -1,0 +1,24 @@
+<div class="p-10 w-11/12">
+  <div class="tabs-headeR">
+    <app-reusable-slidable-tab
+      [tabs]="tabs"
+      (tabIndexEmitter)="tabChange($event)"
+    ></app-reusable-slidable-tab>
+  </div>
+
+  <div *ngIf="activatedTabIndex == 0">
+    <div>
+      <app-users-top-section></app-users-top-section>
+    </div>
+
+    <div class="mt-8">
+      <app-all-branches></app-all-branches>
+    </div>
+  </div>
+
+  <div *ngIf="activatedTabIndex == 1">
+    <div class="mt-4">
+      <app-manager-form></app-manager-form>
+    </div>
+  </div>
+</div>

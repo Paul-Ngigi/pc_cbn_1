@@ -1,0 +1,118 @@
+  <div class="bg-imagE md:grid lg:grid  xl:grid grid-cols-2 xl:py-16">
+    <div class="lefT items-center justify-center">
+      <img class="login-logO" src="/assets/images/saaslogo.png">
+      <div class="login-texT">Saastain goes beyond conventional solutions, empowering you to not only navigate the complexities of emissions tracking but also to drive sustainable growth.</div>
+    </div>
+    <div class="righT" *ngIf="!isRegistered">
+      <form
+      class="forM"
+      autocomplete="off"
+      [formGroup]="registerFormGroup">
+        <div class="inpuT">
+          <div class="sociaL unO">
+            <img src="/assets/images/user.svg">
+          </div>
+          <div class="fielD doS">
+            <div class="labeL ">Name</div>
+            <input type="text" formControlName="name" autocomplete="false" class="inneRR " placeholder="Your Name" />
+          </div>
+        </div>
+        <div class="explaineR">
+          <div class="text-xs text-[red]" *ngIf="Name.errors?.['required'] && Name.touched"> *Name is required</div>
+        </div>
+        <div class="inpuT">
+          <div class="sociaL unO">
+            <img src="/assets/images/mail.svg">
+          </div>
+          <div class="fielD doS">
+            <div class="labeL ">Email Address</div>
+            <input type="email" formControlName="email" autocomplete="false" class="inneRR " placeholder="Your Mail Address" />
+          </div>
+        </div>
+        <div class="explaineR">
+          <div class="text-xs  text-[red]" *ngIf="Email.errors?.['email'] && Email.touched"> *Invalid email</div>
+        </div>
+        <div class="inpuT">
+          <div class="sociaL unO">
+            <img src="/assets/images/office-building.svg">
+          </div>
+          <div class="fielD doS">
+            <div class="labeL ">Role in Company</div>
+            <input type="text" formControlName="roleInCompany" class="inneRR " placeholder="e.g CTO/Head Marketting" />
+          </div>
+        </div>
+        <div class="explaineR">
+          <div class="text-xs text-[red]" *ngIf="Role.errors?.['required'] && Role.touched">*Role is required</div>
+        </div>
+        <div class="inpuT">
+          <div class="sociaL onE">
+            <img src="/assets/images/Lock.png">
+          </div>
+          <div class="fielD twO">
+            <div class="labeL ">Password</div>
+            <input type="password" formControlName="password" class="inneR " placeholder="********" />
+          </div>
+        </div>
+        <div class="explaineR">
+          <div class="text-xs text-[red]"*ngIf="Password.errors?.['required'] && Password.touched">*Password is required</div>
+        </div>
+        <div class="inpuT">
+          <div class="sociaL onE">
+            <img src="/assets/images/Lock.png">
+          </div>
+          <div class="fielD twO">
+            <div class="labeL ">Confirm Password</div>
+            <input formControlName="confirmPassword" class="inneR " placeholder="********" (input)="validateConfPass($event)" />
+          </div>
+        </div>
+        <div class="explaineR">
+          <div class="text-xs text-[red]" *ngIf="unmatchedPass">*Passwords do not match</div>
+          <div class="text-xs text-[red]" *ngIf="ConfirmPassword.errors?.['required'] && ConfirmPassword.touched">*Confirm password is required</div>
+        </div>
+        <div class="explaineR">Password must be at least <span>8 Characters</span> and must contain at least a <span>Capital Letter</span>, a <span>Number</span> and a <span>Special Character</span>.</div>
+        <div class="checK">
+          <input
+            type="checkbox"
+            class="h-4 w-4 checkboX rounded text-[indigo] focus:ring-[indigo]"
+            formControlName="terms"
+            required
+          />
+          <div class="terms-texT">
+            I agree to the <a href="/" class="terms-pagE">Terms and Conditions</a>
+          </div>
+        </div>
+        <div class="passworD">
+          <div
+            class="buttoN"
+            (click)="validateRegisterFormGroup()"
+            *ngIf="!registerIsLoading">
+            Sign Up
+          </div>
+          <div class="loadeR" *ngIf="registerIsLoading">
+            <div class="loader-componenT">
+              <app-loader></app-loader>
+            </div>
+          </div>
+        </div>
+        <div class="sign-uP">Have Account? <a routerLink="/auth" class="linK">Sign In</a></div>
+      </form>
+    </div>
+
+    <div
+      *ngIf="isRegistered"
+      class="bg-white shadow-gray-900 rounded p-5 flex  items-center justify-center w-full"
+    >
+      <div>
+      <div class="flex gap-4">
+        <div class="font-[700] text-[20px] leading-[150%] text-[#123726] text-center">
+          A verification link has been sent to your email address.
+        </div>
+      </div>
+        <div class="border mt-4"></div>
+        <div class="mt-4 text-[16px] font-[400] leading-[150%] text-center">
+          Please click the link that has been sent to your email address to verify
+          your email and continue with the verification process.
+        </div>
+      </div>
+    </div>
+  </div>

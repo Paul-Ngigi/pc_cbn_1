@@ -1,0 +1,127 @@
+.containeR {
+//   margin: 4% 5%;
+}
+
+.headeR {
+  display: flex;
+
+  padding-top: 20px;
+
+  gap: 350px;
+}
+
+.xoxo {
+  margin: 0;
+}
+
+.reD {
+  position: relative;
+
+  top: -30%;
+
+  left: 0;
+}
+
+.titlE {
+  color: #000;
+
+  font-size: 21px;
+
+  font-style: normal;
+
+  font-weight: 700;
+
+  line-height: 26px;
+}
+
+.search-btN {  
+  border-radius: 35px; 
+}
+
+.headeR svg {
+  position: relative;
+
+  left: 390px;
+
+  top: 8px;
+}
+
+input {
+  color: #000;
+
+  font-size: 16px;
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  line-height: 26px;
+}
+
+input::placeholder {
+  color: #000;
+}
+
+.organizE {
+  align-items: center;
+
+  display: flex;
+
+  gap: 10px;
+}
+
+.rolE {
+  background: #fff;
+
+  border-radius: 15px;
+
+  margin: 4% 10%;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+.rolE img {
+  margin-left: 40%;
+}
+
+.activE {
+  background: #fff;
+
+  border-radius: 15px;
+
+  margin: 5% 0;
+}
+
+.buttoN {
+  display: flex;
+
+  margin-top: 15%;
+}
+
+.buttoN svg {
+  margin-right: 10%;
+}
+
+.adD {
+  padding: 5px 40px;
+
+  color: var(--secondary-colour, #34b206);
+
+  font-size: 29px;
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  line-height: 26px;
+
+  align-items: center;
+
+  border-radius: 9px;
+
+  background: var(--neutral-2, #000);
+}

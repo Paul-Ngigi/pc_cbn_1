@@ -1,0 +1,166 @@
+<div>
+    <app-add-data></app-add-data>
+    <!-- Top Section -->
+    <div class="mt-8 bg-[#E4FCE6] px-16 py-8 rounded-lg">
+      <div class="text-lg font-bold">Fugitive Emission</div>
+      <div class="mt-8 text-sm text-[#1F2937]">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+        laboriosam facilis vero cumque temporibus, molestias asperiores cupiditate
+        sit repellat aliquam enim! Accusantium eum error sit. Quos ab obcaecati
+        rerum esse.
+      </div>
+      
+      <div class="mt-8 flex gap-3 hover:cursor-pointer">
+        <div class="text-[#5E896E] text-sm">>></div>
+        <div class="text-[#5E896E] text-sm hover:underline">View Guides</div>
+      </div>
+      <div class="mt-8">
+        <form>
+          <div class="mb-4 md:grid md:grid-cols-2 lg:grid-cols-3">
+            <div>
+              <div class="text-sm text-[#1F2937]">Fugitive Type</div>
+              <div class="mt-2">
+                <div class="md:grid grid-cols-2 gap-8 w-max">
+                  <div class="w-[18rem]">
+                    <div
+                      class="flex justify-between px-4 py-2 border border-[#CFD3D4] rounded hover:cursor-pointer items-center text-sm w-full"
+                      (click)="toggleEmissionSource()"
+                    >
+                      <div class="text-[#ABAFB1]">{{ selectedEmission }}</div>
+                      <div><mat-icon>arrow_drop_down</mat-icon></div>
+                    </div>
+                    <div
+                      class="px-4 py-2 bg-[#ffffff] mt-4 max-h-40 overflow-y-scroll"
+                      *ngIf="emissionSourceActive"
+                    >
+                      <ul *ngFor="let emissionSource of emissionSources">
+                        <li
+                          class="hover:bg-[#5E896E] hover:cursor-pointer hover:text-[#ffffff] rounded px-3 py-2 w-full"
+                        >
+                          {{ emissionSource }}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="text-sm text-[#1F2937]">Fugitive Emission Name</div>
+              <div class="mt-2">
+                <div class="md:grid grid-cols-2 gap-8 w-max">
+                  <div class="w-[18rem]">
+                    <div
+                      class="flex justify-between px-4 py-2 border border-[#CFD3D4] rounded hover:cursor-pointer items-center text-sm w-full"
+                      (click)="toggleEquimentName()"
+                    >
+                      <div class="text-[#ABAFB1]">{{ selectedEmission }}</div>
+                      <div><mat-icon>arrow_drop_down</mat-icon></div>
+                    </div>
+                    <div
+                      class="px-4 py-2 bg-[#ffffff] mt-4 max-h-40 overflow-y-scroll"
+                      *ngIf="equipmentNameActive"
+                    >
+                      <ul *ngFor="let emissionSource of emissionSources">
+                        <li
+                          class="hover:bg-[#5E896E] hover:cursor-pointer hover:text-[#ffffff] rounded px-3 py-2 w-full"
+                        >
+                          {{ emissionSource }}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-4 md:grid md:grid-cols-3 lg:grid-cols-3">
+            <div>
+              <div class="text-sm text-[#1F2937]">Emission Gas</div>
+              <div class="mt-2">
+                <div class="md:grid grid-cols-2 gap-8 w-max">
+                  <div class="w-64">
+                    <div
+                      class="flex justify-between px-4 py-2 border border-[#CFD3D4] rounded hover:cursor-pointer items-center text-sm w-full"
+                      (click)="toggleFuelType()"
+                    >
+                      <div class="text-[#ABAFB1]">{{ selectedEmission }}</div>
+                      <div><mat-icon>arrow_drop_down</mat-icon></div>
+                    </div>
+                    <div
+                      class="px-4 py-2 bg-[#ffffff] mt-4 max-h-40 overflow-y-scroll"
+                      *ngIf="fuelTypeActive"
+                    >
+                      <ul *ngFor="let emissionSource of emissionSources">
+                        <li
+                          class="hover:bg-[#5E896E] hover:cursor-pointer hover:text-[#ffffff] rounded px-3 py-2 w-full"
+                        >
+                          {{ emissionSource }}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="text-sm text-[#1F2937]">Unit of Emission</div>
+              <div class="mt-2">
+                <div class="md:grid grid-cols-2 gap-8 w-max">
+                  <div class="w-64">
+                    <div
+                      class="flex justify-between px-4 py-2 border border-[#CFD3D4] rounded hover:cursor-pointer items-center text-sm w-full"
+                      (click)="toggleFuelUnit()"
+                    >
+                      <div class="text-[#ABAFB1]">{{ selectedEmission }}</div>
+                      <div><mat-icon>arrow_drop_down</mat-icon></div>
+                    </div>
+                    <div
+                      class="px-4 py-2 bg-[#ffffff] mt-4 max-h-40 overflow-y-scroll"
+                      *ngIf="fuelUnitActive"
+                    >
+                      <ul *ngFor="let emissionSource of emissionSources">
+                        <li
+                          class="hover:bg-[#5E896E] hover:cursor-pointer hover:text-[#ffffff] rounded px-3 py-2 w-full"
+                        >
+                          {{ emissionSource }}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="text-sm text-[#1F2937]">Amount of leakage gas</div>
+              <div class="mt-2">
+                <input
+                  type="number"
+                  class="px-4 py-3 border border-[#CFD3D4] rounded text-sm w-full focus:outline-none bg-[#E4FCE6] text-[#1F2937]"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-end gap-4 items-center mt-8">
+            <div>
+              <button
+                class="border border-[#CFD3D4] bg-[#5E896E] px-4 py-2 rounded-lg flex items-center gap-3 text-[#ffffff]"
+              >
+                <mat-icon>check</mat-icon>
+                Continue
+              </button>
+            </div>
+            <div>
+              <button
+                class="border border-[#5E896E] px-4 py-2 rounded-lg flex items-center gap-3 text-[#5E896E] "
+              >
+                <mat-icon>close</mat-icon>
+                Cancel
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

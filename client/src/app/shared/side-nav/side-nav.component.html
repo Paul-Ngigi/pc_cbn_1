@@ -1,0 +1,41 @@
+<div
+  class="flex flex-col gap-4 border-r border-[#E5E7EB]"
+  *ngIf="navData.length > 0"
+>
+  <div *ngFor="let nav of navData">
+    <div class="text-[#A7B3A7] text-sm font-light py-2 px-4">
+      {{ nav.title }}
+    </div>
+    <div
+      class="flex items-center gap-2 py-2 px-4 hover:cursor-pointer hover:bg-[#E5E7EB]"
+      *ngFor="let item of nav.items"
+      (click)="navigatePath(item.routeLink)"
+    >
+      <div>
+        <img src="{{ item.icon }}" alt="" />
+      </div>
+      <div>{{ item.label }}</div>
+    </div>
+  </div>
+  <div>
+    <div class="text-[#A7B3A7] text-sm font-light py-2 px-4">Others</div>
+    <div
+      class="flex items-center gap-2 py-2 px-4 hover:cursor-pointer hover:bg-[#E5E7EB]"
+      (click)="navigatePath(null)"
+    >
+      <div>
+        <img src="assets/svgs/question-mark-circle.svg" alt="" />
+      </div>
+      <div>Docs</div>
+    </div>
+    <div
+      class="flex items-center gap-2 py-3 px-4 hover:cursor-pointer hover:bg-[#E5E7EB]"
+      (click)="logout()"
+    >
+      <div>
+        <img src="assets/svgs/logout.svg" alt="" />
+      </div>
+      <div>Sign Out</div>
+    </div>
+  </div>
+</div>

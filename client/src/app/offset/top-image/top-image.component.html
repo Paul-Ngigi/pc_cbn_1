@@ -1,0 +1,18 @@
+<div class="rounded relative">
+  <div class="absolute bottom-0 p-5">
+    <div class="flex gap-2">
+      <div><img src="/assets/images/location.svg" /></div>
+      <div class="text-white">{{ project.location }}</div>
+    </div>
+    <div class="flex items-center justify-between">
+      <div class="font-bold text-white text-base">Clean Cooking Project</div>
+      <div class="flex bg-white px-3 py-2 rounded gap-2">
+        <div><img src="/assets/images/image-icon.svg" class="h-6" /></div>
+        <div>Show More Images</div>
+      </div>
+    </div>
+  </div>
+  <div class="rounded">
+    <img src="{{ project.image }}" class="w-full object-cover h-96 rounded" />
+  </div>
+</div>

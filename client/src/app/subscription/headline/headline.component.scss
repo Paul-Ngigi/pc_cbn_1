@@ -1,0 +1,29 @@
+.headline-containeR{
+    display: flex;
+    flex-direction: column;
+}
+
+.headline-paragrapH{
+    color: var(--neutral-1, #FFF);
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 1rem;
+}
+
+.headline-titlE{
+    color: var(--secondary-colour, #34B206);
+    font-size: 36px;
+    font-weight: 800;
+    line-height: normal;
+    text-align: center;
+}
+
+.cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7900000214576721;
+    height: 12rem;
+}

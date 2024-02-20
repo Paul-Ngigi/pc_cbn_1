@@ -1,0 +1,193 @@
+@use "@angular/material" as mat;
+
+$primary: mat.define-palette(mat.$green-palette, 500, 100, 900);
+$accent: mat.define-palette(mat.$green-palette, 500, 600, 50);
+$warn: mat.define-palette(mat.$red-palette);
+
+$my-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+    ),
+  )
+);
+.footer {
+  background: var(--Primary-Colour, #123726);
+  padding: 50px 80px;
+  display: block;
+}
+
+.footer-contact{
+  padding-bottom: 30px;
+}
+
+
+.sec-onE .text{
+  width: 400px;
+
+  color: #fff;
+
+  font-size: 12px;
+}
+
+.text .text-one{
+  padding-bottom: 30px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.fulL{
+  display: flex;
+  gap: 30px;
+}
+
+.left{
+  // width: 80%;
+}
+
+.right{
+  // width: 30%;
+}
+
+.phone{
+  display: flex;
+}
+
+.phone .text{
+  color: var(--Color, #FFF);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.footer-fleX {
+  display: flex;
+  gap:150px;
+  justify-content: center;
+}
+
+.wrap{
+  display: flex;
+
+  color: #fff;
+
+  gap:40px;
+
+  justify-content: center;
+
+  margin: 2% 0;
+
+}
+
+.wrap i{
+  margin-right: 2%;
+}
+
+
+.wrap .icon{
+  font-size: 17px;
+  color: #fff;
+}
+
+
+.linkS{
+  display: block;
+  font-size: 12px;
+}
+
+.linkS .first{
+  color: var(--Color, #FFF);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.linkS a{
+  color: var(--Color, #FFF);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.linkS a:hover{
+  color: #34B206;
+}
+
+.space{
+  text-align: center;
+  color: var(--Color, #FFF);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media only screen and (max-width: 850px){
+
+  .fulL{
+  // display: block;
+}
+
+.sec-onE .text{
+  width: 500px;
+
+  font-size: 14px;
+}
+
+
+.footer-fleX {
+  gap:80px;
+  justify-content: left;
+  padding-top: 15px;
+ 
+}
+
+.wrap{
+  margin-left: 1%;
+
+  font-size: 14px;
+  
+  gap:30px;
+
+  margin-top: 15px;
+}
+
+
+.phone{
+  gap: 10px;
+}
+
+}
+
+@media only screen and (max-width: 500px){
+  .footer {
+    padding: 50px 20px;
+  }
+
+  .sec-onE .text{
+    width: 300px;
+  
+    font-size: 14px;
+  }
+    
+  .footer-fleX {
+    gap:30px;
+    justify-content: left;
+    padding-top: 15px;
+  
+  }
+
+  .wrap{
+    display: block;
+  }
+
+  .phone{
+  padding: 10px 0;
+}
+
+}

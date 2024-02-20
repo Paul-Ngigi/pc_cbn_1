@@ -1,0 +1,10 @@
+  <div>
+    <select
+      class="py-3 px-4 pr-9 block w-full bg-[#62B846] border text-white border-0 rounded-md text-sm focus:border-green-500"
+    >
+      <option class="bg-white text-black">Initiative</option>
+      <option *ngFor="let initiative of initiatives" [value]="initiative" class="bg-white text-black">
+        {{initiative}}
+      </option>
+    </select>
+  </div>

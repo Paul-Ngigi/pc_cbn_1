@@ -1,0 +1,23 @@
+<div class="bg-white pt-[5%] w-screen px-8 animate-text md:px-16">
+  <div
+    class="text-center title text-[32px] font-[700] text-[#CFA16C] px-4 animate-text"
+  >
+    Explore our amazing features
+  </div>
+
+  <div class="mt-6 para text-[#374151] leading-6 text-[16px] font-[400] md:leading-[150%] text-center animate-text">
+    We are a sustainability management platform that empowers you to
+    effortlessly measure, visualize and strategize <br> your carbon footprint and environmental
+    impact
+  </div>
+
+  <div class="mt-4 md:mb-12 mx-6 xl:mt-16 mb-4 md:grid   md:grid-cols-2  lg:grid-cols-4 gap-[30px] md:pb-12 pb-6">
+    <div *ngFor="let feature of features"  >
+      <div class="feat">
+        <img class="block  w-1/4  mx-auto" src="{{ feature.imageUrl }}" alt="" />
+        <div class="text-[#5E896E] my-2 text-[18px] font-[700] leading-[150%] text-center">{{ feature.title }}</div>
+        <div class="text-[#374151] text-[12px] font-[400] leading-normal text-center">{{ feature.description }}</div>
+      </div>
+    </div>
+  </div>
+</div>

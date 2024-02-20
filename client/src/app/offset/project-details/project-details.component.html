@@ -1,0 +1,238 @@
+<div class="">
+  <nav class="header-offseT flex mb-4" aria-label="Breadcrumb">
+    <ol class="inline-flex items-center space-x-1 md:space-x-3">
+      <li class="inline-flex items-center">
+        <a
+          href="#"
+          class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
+        >
+          Offset
+        </a>
+      </li>
+      <li>
+        <div class="flex items-center">
+          <svg
+            class="w-3 h-3 text-gray-400 mx-1"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 9 4-4-4-4"
+            />
+          </svg>
+          <a
+            href="#"
+            class="text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white"
+            >Projects Details</a
+          >
+        </div>
+      </li>
+    </ol>
+  </nav>
+  <div class="flex md:flex-row gap-6 flex-col w-full justify-between">
+    <div class="offset-containeR gap-6">
+      <button class="offset-buttoN py-1 px-3" type="button">
+        {{ projectDetails?.technology_type?.name }}
+      </button>
+      <h2 class="offset-namE">{{ projectDetails?.name }}</h2>
+      <p class="offset-paragrapH">
+        {{ projectDetails?.tagline }}
+      </p>
+      <div class="w-[100%] py-4">
+        <div class="w-[96%]">
+          <h2 class="offset-summarY">Summary Details</h2>
+          <div class="flex md:flex-row flex-col justify-between mt-4">
+            <div class="flex flex-col">
+              <div class="flex flex-col gap-4">
+                <span class="offset-descriptioN my-0"
+                  >Parent Technology Type</span
+                >
+                <span class="offset-buttoN text-center w-fit py-1 px-3">
+                  {{ projectDetails?.technology_type?.name }}
+                </span>
+              </div>
+              <div class="flex flex-col gap-4 mt-6">
+                <div class="flex flex-row gap-2">
+                  <span class="offset-descriptioN">Production</span>
+                  <img src="/assets/svgs/information-circle.svg" alt="" />
+                </div>
+                <span class="offset-buttoN text-center w-fit py-1 px-3">{{
+                  projectDetails?.production
+                }}</span>
+              </div>
+              <div class="flex flex-col gap-4 mt-6">
+                <span class="offset-descriptioN">Satelite Location</span>
+                <div class="flex flex-row gap-2">
+                  <h4>View on Map</h4>
+                  <img
+                    src="/assets/svgs/external-link.png"
+                    class="h-4 w-4 mt-1"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="flex flex-col gap-4 mt-6">
+                <span class="offset-descriptioN">Verifier</span>
+                <h4>{{ projectDetails?.verifier }}</h4>
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <div class="flex flex-col gap-4">
+                <div class="flex flex-row gap-2">
+                  <span class="offset-descriptioN">Mechanism</span>
+                  <img src="/assets/svgs/information-circle.svg" alt="" />
+                </div>
+                <span
+                  class="offset-buttoN text-center w-fit py-1 px-3"
+                  type="button"
+                  >{{ projectDetails?.mechanism }}</span
+                >
+              </div>
+              <div class="flex flex-col gap-4 mt-6">
+                <span class="offset-descriptioN">Inssuance Type</span>
+                <span>{{ projectDetails?.issuance_type }}</span>
+              </div>
+              <div class="flex flex-col gap-4 mt-6">
+                <span class="offset-descriptioN">Country</span>
+                <span>{{ projectDetails?.country }}</span>
+              </div>
+              <div class="flex flex-col gap-4 mt-6">
+                <div class="flex flex-row gap-2">
+                  <span class="offset-descriptioN">Standard</span>
+                  <img src="/assets/svgs/information-circle.svg" alt="" />
+                </div>
+                <span *ngIf="projectDetails?.standard; else noStandard">{{
+                  projectDetails?.standard?.acronym
+                }}</span>
+                <ng-template #noStandard>NA</ng-template>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-[100%] mt-4">
+          <div
+            class="projectDetail flex flex-row gap-4 w-[96%] justify-start align-start text-[#5E896E] hover:cursor-pointer"
+          >
+            <img
+              class="mb-4"
+              src="/assets/svgs/chevron-double-right.svg"
+              alt="double-chevron"
+            />
+            <h2 class="accordion-header" (click)="toggleAccordion()">
+              More Project Details
+            </h2>
+          </div>
+
+          <app-accordion
+            [description]="description"
+            *ngIf="isOpen"
+          ></app-accordion>
+          <app-accordion [sdgs]="sdgs" *ngIf="isOpen"></app-accordion>
+          <app-accordion [inventory]="inventory" *ngIf="isOpen"></app-accordion>
+          <app-accordion [location]="location" *ngIf="isOpen"></app-accordion>
+        </div>
+
+        <div class="w-[100%] py-4">
+          <div class="w-fit mx-auto flex md:flex-row flex-col w-full gap-4">
+            <div class="col-span-2">
+              <img
+                class="offsetlogoimG1 rounded-[16px] h-[255px] object-cover"
+                src="{{ projectDetails.photos[0]?.url }}"
+                *ngIf="projectDetails.photos[0]?.url !== null; else defaultImage"
+                alt="project Image"
+              />
+              <ng-template #defaultImage>
+              <img
+              class="offsetlogoimG1 rounded-[16px] h-[255px] object-cover"
+              src="/assets/svgs/Projectlogo.svg"
+              alt="Default Image"
+              />
+              </ng-template>
+            </div>
+            <div class="offsetlogoimG2 flex flex-col gap-[13px]">
+
+              <img
+                class="h-[120px] rounded-[16px] object-cover"
+                src="{{ projectDetails.photos[1]?.url }}"
+                *ngIf="projectDetails.photos[1]?.url !== null; else defaultImage"
+                alt="project Image"
+              />
+              <ng-template #defaultImage>
+              <img
+              class="h-[120px] rounded-[16px] object-cover"
+              src="/assets/svgs/image1.svg"
+              alt="Default Image"
+              />
+              </ng-template>
+
+              <img
+              class="h-[120px] rounded-[16px] object-cover"
+              src="{{ projectDetails.photos[2]?.url }}"
+              *ngIf="projectDetails.photos[2]?.url !== null; else defaultImage"
+              alt="project Image"
+              />
+              <ng-template #defaultImage>
+              <img
+              class="h-[120px] rounded-[16px] object-cover"
+              src="/assets/svgs/image2.svg"
+              alt="Default Image"
+              />
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="offsetMiniContaineR md:w-[30%] w-full p-3 h-fit">
+      <div>
+        <div>
+          <h2 class="ordeR">Order Summary</h2>
+        </div>
+        <img class="mb-4" src="/assets/svgs/logo2.svg" alt="image" />
+      </div>
+      <div>
+        <h2 class="scopE">Select Scope</h2>
+        <div class="dropdowncontaineR w-full">
+          <select
+            class="w-full h-[35px] mb-4 p-2 flex justify-center text-center"
+          >
+            <option value="" disabled selected>Select One</option>
+            <option *ngFor="let option of options" [value]="option">
+              {{ option }}
+            </option>
+          </select>
+        </div>
+
+        <div>
+          <h2 class="amounT">Amount of carbon credits to buy</h2>
+          <div class="relative">
+            <input
+              type="number"
+              min="1"
+              placeholder="3400"
+              class="w-full h-[35px] flex justify-start text-start gap-4 p-2 pr-[30px] pl-[30px]"
+            />
+            <img
+              src="/assets/svgs/currency-dollar.svg"
+              alt=""
+              class="absolute inset-y-0 left-0 h-full w-8 p-2"
+            />
+          </div>
+          <span>40000 carbon credits available </span>
+        </div>
+      </div>
+      <button
+        class="btn bg-[green] btn-lg w-full text-[#fff] h-[40px] p-2 mt-4"
+      >
+        Buy Offsets
+      </button>
+    </div>
+  </div>
+</div>

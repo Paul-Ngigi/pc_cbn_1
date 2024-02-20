@@ -1,0 +1,33 @@
+img{
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 500px){
+    .title{
+        font-size: 26px;
+    }
+
+    .para{
+        font-size: 14px;
+    }
+
+    .relative{
+        display: block;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    input, .btns{
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    .btns{
+        margin-left: 30%;
+    }
+
+    .loader, .submit{
+        width: 10rem;
+    }
+}

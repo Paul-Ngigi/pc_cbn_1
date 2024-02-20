@@ -1,0 +1,60 @@
+  <div class="bg-imagE md:grid lg:grid  xl:grid grid-cols-2 xl:py-16">
+    <div class="lefT items-center justify-center">
+      <img class="login-logO" src="/assets/images/saaslogo.png">
+      <div class="login-texT">Saastain goes beyond conventional solutions, empowering you to not only navigate the complexities of emissions tracking but also to drive sustainable growth.</div>
+    </div>
+    <div class="righT">
+      <form
+      class="forM"
+      autocomplete="off"
+      [formGroup]="loginFormGroup"
+      (submit)="validateLoginFormGroup()">
+        <div class="inpuT">
+          <div class="sociaL unO">
+            <img src="/assets/images/mail.svg">
+          </div>
+          <div class="fielD doS">
+            <div class="labeL ">Email Address</div>
+            <input type="email"  formControlName="email" autocomplete="false" class="inneRR " placeholder="Your Mail Address" />
+          </div>
+        </div>
+
+        <div class="explaineR">
+          <div class="text-xs text-[red]" *ngIf="Email.errors?.['required'] && Email.touched">*Email is required</div>
+          <div class="text-xs text-[red]" *ngIf="Email.errors?.['email'] && Email.touched">*Invalid email</div>
+        </div>
+
+        <div class="inpuT">
+          <div class="sociaL onE">
+            <img src="/assets/images/Lock.png">
+          </div>
+          <div class="fielD twO">
+            <div class="labeL ">Password</div>
+            <input formControlName="password" class="inneR " [type]="show_eye ? 'text' : 'password'" autocomplete="false" placeholder="********" />
+          </div>
+          <i [class]="show_eye ? 'fa fa-eye' : 'fa fa-eye-slash'" (click)="showPassword()"></i>
+        </div>
+
+        <div class="explaineR">
+          <div class="text-xs text-[red]" *ngIf="Password.errors?.['required'] && Password.touched">*Password is required</div>
+          <div class="text-xs text-[red]" *ngIf="Password.errors?.['minlength'] && Password.touched">*Password is too short</div>
+        </div>
+        
+        <div class="explaineR">Password must be at least <span>8 Characters</span> and must contain at least a <span>Capital Letter</span>, a <span>Number</span> and a <span>Special Character</span>.</div>
+        <div class="passworD">
+          <a routerLink="/auth/forgot-password" class="forgoT">Forgot Password ?</a>
+          <div>
+            <div class="btn-logiN" *ngIf="!signInLoading">      
+              <button class="logiN" type="submit">Sign In</button>
+            </div>
+            <div class="loadeR" *ngIf="signInLoading">
+                <div class="loader-componenT">
+                    <app-loader></app-loader>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="sign-uP">No Account Yet ? <a routerLink="/auth/register" class="linK">Sign Up</a></div>
+      </form>
+    </div>
+  </div>

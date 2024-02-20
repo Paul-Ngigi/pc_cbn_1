@@ -1,0 +1,96 @@
+<div class="">
+  <div class="flex flex-col">
+    <div class="overflow-x-auto tablE">
+      <div class="inline-block min-w-full align-middle">
+        <div class="overflow-hidden">
+          <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-700 mt-3 rounded-md">
+            <thead class="bg-[#34B206] text-white dark:bg-green-700">
+              <tr class="text-center">
+                <th scope="col" class="p-4">
+                  <div class="flex items-center justify-center">
+                    <input
+                      id="checkbox-all"
+                      type="checkbox"
+                      class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label for="checkbox-all" class="sr-only">checkbox</label>
+                  </div>
+                </th>
+                <th
+                  scope="col"
+                  class="py-3 px-3 text-xs font-medium tracking-wider text-center text-white uppercase"
+                >
+                  NAME
+                </th>
+                <th
+                  scope="col"
+                  class="py-3 px-3 text-xs font-medium tracking-wider text-center text-white uppercase"
+                >
+                  SIZE
+                </th>
+                <th
+                  scope="col"
+                  class="py-3 px-3 text-xs font-medium tracking-wider text-center text-white uppercase"
+                >
+                  LAST MODIFIED
+                </th>
+                <th
+                  scope="col"
+                  class="py-3 px-3 text-xs font-medium tracking-wider text-center text-white uppercase"
+                >
+                  KIND
+                </th>
+                <th
+                  scope="col"
+                  class="py-3 px-3 text-xs font-medium tracking-wider text-center text-white uppercase"
+                ></th>
+              </tr>
+            </thead>
+            <tbody
+              class="bg-white divide-y divide-gray-400 dark:divide-black-500"
+              *ngFor="let report of reports"
+            >
+              <tr class="hover:bg-gray-100 dark:hover:bg-gray-300">
+                <td class="p-4 w-4">
+                  <div class="flex items-center justify-center">
+                    <input
+                      id="checkbox-table-1"
+                      type="checkbox"
+                      class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                  </div>
+                </td>
+                <td
+                  class="py-4 px-6 text-sm font-medium text-center text-gray-900 whitespace-nowrap"
+                >
+                  {{ report.name }}
+                </td>
+                <td
+                  class="py-4 px-6 text-sm font-medium text-center text-gray-900 whitespace-nowrap"
+                >
+                  {{ report.size }}
+                </td>
+                <td
+                  class="py-4 px-6 text-sm font-medium text-center text-gray-900 whitespace-nowrap"
+                >
+                  {{ report.date }}
+                </td>
+                <td
+                  class="py-4 px-6 text-sm font-medium text-center whitespace-nowrap"
+                >
+                  {{ report.kind }}
+                </td>
+                <td class="flex items-center justify-center py-4 px-6 ">
+                  <img class="hover:cursor-pointer" src="/assets/images/download-icon.svg" alt="" />
+                  <img class="hover:cursor-pointer" src="/assets/images/link-icon.svg" alt="" />
+                  <img class="hover:cursor-pointer" src="/assets/images/options-icon.svg" alt="" />
+                </td>                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

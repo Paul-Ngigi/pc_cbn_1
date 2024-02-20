@@ -1,0 +1,266 @@
+.containeR {
+
+    width: 100%;
+
+    flex-shrink: 0;
+
+}
+
+@keyframes fake {
+
+    from {
+
+        opacity: 1;
+
+   }
+
+    to {
+
+        opacity: 1;
+
+   }
+
+}
+
+.sub-tabS .state {
+
+    display: none;
+
+}
+
+.sub-tabS .flex-tabs {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+}
+
+.sub-tabS .flex-tabs .tab {
+
+    flex-grow: 1;
+
+    color: #fff;
+
+    font-size: 29px;
+
+    font-style: normal;
+
+    font-weight: 700;
+
+    line-height: normal;
+
+}
+
+.sub-tabS .flex-tabs .panel {
+
+    padding: 20px;
+
+    display: none;
+
+    height: 120vh;
+
+    width: 100%;
+
+    flex-basis: auto;
+
+    transition: 0.15s ease-in;
+
+}
+
+
+.labels{
+    
+    width: 220px;
+
+    height: 44px;
+
+    border-radius: 22px;
+
+    display: flex;
+
+    margin: 2% 40%;
+
+    background-color: rgb(255,255,255, .5);
+
+}
+
+#tab-one:checked ~ .tabs #tab-one-label, #tab-two:checked ~ .tabs #tab-two-label{
+
+    color: #fff;
+
+    cursor: default;
+
+    background-color: #34b206;
+
+    width: 50%;
+
+    border-radius: 22px;
+
+}
+
+#tab-one-label, #tab-two-label{
+
+    padding-top: 6.5%;
+
+    width: 50%;
+
+    color: #000;
+    
+    font-size: 12px;
+
+    font-weight: 500;
+
+    line-height: normal;
+    
+    letter-spacing: 0.833px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    cursor: hand;
+
+    cursor: pointer;
+
+}
+
+#tab-one:checked ~ .tabs #tab-one-panel, #tab-two:checked ~ .tabs #tab-two-panel{
+
+    display: block;
+
+}
+
+.cardS{
+
+    display: flex;
+
+    gap: 40px;
+
+    width: 100%;
+
+    padding: 3% 10%;
+
+}
+
+.card-onE{
+
+    background-image: url("/assets/images/mesh-gradient\ \(1\)\ 1.png");
+
+    width: 33%;
+
+    padding: 5% 3%;
+
+    border-radius: 22px;
+
+}
+
+.card-toP{
+
+    text-align: left;
+
+    color: #fff;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+}
+
+.card-texT{
+
+    margin: 8% 0;
+
+    font-size: 12px;
+
+}
+
+.card-lisT{
+
+    list-style-type: circle;
+
+    margin-bottom: 10%;
+
+}
+
+li{
+
+    margin: 2% 5%;
+
+    font-size: 12px;
+
+}
+
+.starter{
+
+    color: #fff;
+
+}
+
+.card-pricE{
+
+    text-align: center;
+
+    color: #fff;
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+    margin: 5% 0;
+
+}
+
+.card-pricE span{
+
+    font-weight: 700; 
+
+}
+
+.btN{
+
+    display: flex;
+
+    background-color: #000;
+
+    color: #fff;
+
+    width: 210px;
+
+    height: 45px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    margin-left: 10%;
+
+    margin-top: 10%;
+
+    font-size: 17px;
+
+    font-weight: 400;
+    
+}
+
+.down{
+
+    margin-top: 80%;
+
+}
+
+.downn{
+
+    margin-top: 20%;
+
+}

@@ -1,0 +1,115 @@
+<div class="containeR  xl:py-4">
+    <div class="description ">
+        <img class="login-logO" src="/assets/images/saaslogo.png">
+        <div class="text-[#374151] text-[30px] font-[600] leading-[150%]">Set Up Your Company Profile </div>
+        <div class="text-[#374151] text-[16px] font-[400] leading-[150%]">Saastain goes beyond conventional solutions, empowering you to not only navigate the complexities of
+            emissions tracking but also to drive sustainable growth.</div>
+    </div>
+
+    <div class="form">
+        <form class="form" autocomplete="off" [formGroup]="companyForm" (submit)="submitForm()">
+            <div class="form-group grid md:grid-flow-col gap-2 grid-flow-row">
+                <div class="inpuT ">
+                    <div class="sociaL unO">
+                        <span> <i class="fa-solid fa-building fa-2xl"></i></span>
+                    </div>
+                    <div class="fielD doS">
+                        <div class="labeL ">Name</div>
+                        <input type="text" formControlName="companyName" autocomplete="false" class="inneRR form-input "
+                            placeholder="Company Name" />
+                    </div>
+                    <div *ngIf="companyForm.get('companyName')?.touched && companyForm.get('companyName')?.invalid">
+                        <small class="text-danger">Company name is required</small>
+                    </div>
+                </div>
+
+                <div class="inpuT">
+                    <div class="sociaL unO">
+                        <span> <i class="fa-solid fas fa-phone fa-2xl"></i></span>
+                    </div>
+                    <div class="fielD doS">
+                        <div class="labeL ">Email</div>
+                        <input type="email" formControlName="primaryEmail" autocomplete="false" class="inneRR "
+                            placeholder="Company Email" />
+                    </div>
+                    <div *ngIf="companyForm.get('primaryEmail')?.touched && companyForm.get('primaryEmail')?.invalid">
+                        <small class="text-danger">Valid email is required</small>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group grid md:grid-flow-col gap-2 grid-flow-row">
+                <div class="inpuT">
+                    <div class="sociaL unO">
+                        <span> <i class="fa-solid fas fa-phone fa-2xl"></i></span>
+                    </div>
+                    <div class="fielD doS">
+                        <div class="labeL ">Phone Number</div>
+                        <input type="tel" formControlName="phoneNo" autocomplete="false" class="inneRR "
+                            placeholder="Phone Number" />
+                    </div>
+                    <div *ngIf="companyForm.get('phoneNo')?.touched && companyForm.get('phoneNo')?.invalid">
+                        <small class="text-danger">Phone number is required</small>
+                    </div>
+                </div>
+                <div class="inpuT">
+                    <div class="sociaL unO">
+                        <span> <i class="fa-solid fas fas fa-location-dot fa-2xl"></i></span>
+                    </div>
+                    <div class="fielD doS">
+                        <div class="labeL ">Company Location</div>
+                        <input type="text" formControlName="location" autocomplete="false" class="inneRR "
+                            placeholder="Location" />
+                    </div>
+                    <div *ngIf="companyForm.get('location')?.touched && companyForm.get('location')?.invalid">
+                        <small class="text-danger">Location is required</small>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group grid md:grid-flow-col gap-2  grid-flow-row">
+                <div class="inpuT">
+                    <div class="sociaL unO">
+                        <span> <i class="fa-solid fa-building fa-2xl"></i></span>
+                    </div>
+                    <div class="fielD doS">
+                        <div class="labeL ">Corporate Number</div>
+                        <input type="text" formControlName="corporate" autocomplete="false" class="inneRR "
+                            placeholder="1234567" />
+                    </div>
+                    <div *ngIf="companyForm.get('corporate')?.touched && companyForm.get('corporate')?.invalid">
+                        <small class="text-danger">Corporate Number is required</small>
+                    </div>
+                </div>
+                <div class="inpuTT">
+                    <div class="sociaL unO">
+                        <span> <i class="fa-solid fa-building fa-2xl"></i></span>
+                    </div>
+                    <div class="fielD doS">
+                        <div class="labeL ">Description</div>
+
+                        <textarea id="" formControlName="description" class="inneRR " placeholder="Company Description"></textarea>
+                        
+                    </div>
+                    <div *ngIf="companyForm.get('description')?.touched && companyForm.get('description')?.invalid">
+                        <small class="text-danger">Description is required</small>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-action grid  w-1/4 mx-10">
+                <div>
+                    <div class="btn-logiN" *ngIf="!signInLoading">      
+                      <button class="logiN" type="submit">Save Details</button>
+                    </div>
+                    <div class="loadeR" *ngIf="signInLoading" >
+                        <div class="loader-componenT">
+                            <app-loader></app-loader>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            
+        </form>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+.bodY {
+  width: calc(100% - 2.5rem);
+  height: auto;
+  min-height: 100vh;
+  // margin-left: 5rem;
+  z-index: 0;
+  position: relative;
+  transition: all 0.5s ease;
+  background: #FBFBFB;
+}
+
+.body-trimmeD {
+  width: calc(100% - 12.5625rem);
+  // margin-left: 15rem;
+}
+
+.outleT {  
+  margin-left: 239px;
+  margin-right: 0;
+}

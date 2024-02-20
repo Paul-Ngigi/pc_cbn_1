@@ -1,0 +1,126 @@
+<div class="accordion-content" *ngIf="description" (click)="toggleItem()">
+  <div class="w-[100%] gap-[24px] mb-5">
+    <div
+      class="w-[100%] mb-5 py-6 px-6 text-[#5E896E] bg-[#FCF5EB] rounded-[9px] shadow-sm accord"
+    >
+      <div
+        class="flex justify-between hover:cursor-pointer text-base font-medium"
+      >
+        <div>
+          {{ description?.header }}
+        </div>
+        <div *ngIf="isOpen">X</div>
+        <div *ngIf="!isOpen">+</div>
+      </div>
+      <div class="mt-4" *ngIf="isOpen">
+        {{ description?.description }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="accordion-content" *ngIf="sdgs" (click)="toggleItem()">
+  <div class="w-[100%] gap-[24px] mb-5">
+    <div
+      class="w-[100%] mb-5 py-6 px-6 text-[#5E896E] bg-[#FCF5EB] rounded-[9px] shadow-sm accord"
+    >
+      <div
+        class="flex justify-between hover:cursor-pointer text-base font-medium"
+      >
+        <div>
+          {{ sdgs?.header }}
+        </div>
+        <div *ngIf="isOpen">X</div>
+        <div *ngIf="!isOpen">+</div>
+      </div>
+      <div class="mt-4 grid grid-cols-2 gap-2" *ngIf="isOpen">
+        <div *ngFor="let sdg of sdgs.sdgs">
+          <div class="flex items-center gap-2 text-xs text-[#9CA3AF]">
+            <div>{{ sdg?.title }}</div>
+            <div>{{ sdg?.number }}</div>
+          </div>
+          <div class="grid grid-cols-2 items-center gap-1 mt-2 mb-3">
+            <div class="text-sm text-[#111827]">{{ sdg?.description }}</div>
+            <div>
+              <a href="{{ sdg?.url }}" target="_blank">
+                <img src="/assets/svgs/url_icon.svg" alt="" class="h-3" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="accordion-content" *ngIf="inventory" (click)="toggleItem()">
+  <div class="w-[100%] gap-[24px] mb-5">
+    <div
+      class="w-[100%] mb-5 py-6 px-6 text-[#5E896E] bg-[#FCF5EB] rounded-[9px] shadow-sm accord"
+    >
+      <div
+        class="flex justify-between hover:cursor-pointer text-base font-medium"
+      >
+        <div>
+          {{ inventory?.header }}
+        </div>
+        <div *ngIf="isOpen">X</div>
+        <div *ngIf="!isOpen">+</div>
+      </div>
+      <div class="mt-4" *ngIf="isOpen">
+        <table class="text-center">
+          <thead>
+            <th class="px-3 py-1">Year</th>
+            <th class="px-3 py-1">Start Year</th>
+            <th class="px-3 py-1">End Year</th>
+            <th class="px-3 py-1">Amount</th>
+            <th class="px-3 py-1">Price</th>
+            <th class="px-3 py-1">Currency</th>
+            <th class="px-3 py-1">Unit</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let inv of inventory.inventory">
+              <td class="px-3 py-1">{{ inv?.vintage_year }}</td>
+              <td class="px-3 py-1">{{ inv?.vintage_start_year }}</td>
+              <td class="px-3 py-1">{{ inv?.vintage_end_year }}</td>
+              <td class="px-3 py-1">{{ inv?.amount_available | currency:'':'':'2.0' }}</td>
+              <td class="px-3 py-1">{{ inv?.price | currency:'':'' }}</td>
+              <td class="px-3 py-1">{{ inv?.currency }}</td>
+              <td class="px-3 py-1">{{ inv?.unit }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="accordion-content" *ngIf="location" (click)="toggleItem()">
+  <div class="w-[100%] gap-[24px] mb-5">
+    <div
+      class="w-[100%] mb-5 py-6 px-6 text-[#5E896E] bg-[#FCF5EB] rounded-[9px] shadow-sm accord"
+    >
+      <div
+        class="flex justify-between hover:cursor-pointer text-base font-medium"
+      >
+        <div>
+          {{ location?.header }}
+        </div>
+        <div *ngIf="isOpen">X</div>
+        <div *ngIf="!isOpen">+</div>
+      </div>
+      <div class="mt-4" *ngIf="isOpen">
+        <div class="grid grid-cols-2">
+          <div>
+            <div>Longitude</div>
+            <div>{{ location.longitude }}</div>            
+          </div>
+          <div>
+            <div>Latitude</div>
+            <div>{{ location.latitude }}</div>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

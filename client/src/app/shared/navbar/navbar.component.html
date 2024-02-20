@@ -1,0 +1,52 @@
+<div class="bg-[#F8EEDC] w-full flex items-center py-[20px] lg:py-[40px]">
+  <div class="w-[90%] mx-auto flex flex-col lg:flex-row justify-between items-center">
+    <div class="mb-4 lg:mb-0">
+      <img
+        class="logo hover:cursor-pointer w-[60%]"
+        src="/assets/images/saaslogo.png"
+        alt="logo"
+        (click)="landing()"
+      />
+    </div>
+    <div class="flex flex-row gap-4 lg:gap-12">
+      <ul
+        class="text-[#5E896E] text-[16px] font-[300] leading-[150%] hover:cursor-pointer hover:underline"
+        (click)="features()"
+      >
+        Features
+    </ul>
+      <ul
+        class="text-[#5E896E] text-[16px] font-[300] leading-[150%] hover:cursor-pointer hover:underline"
+        (click)="why()"
+      >
+        Why SaaSTAIN
+      </ul>
+      <ul
+        class="text-[#5E896E] text-[16px] font-[300] leading-[150%] hover:cursor-pointer hover:underline"
+        (click)="about()"
+      >
+        About Us
+      </ul>
+      <ul
+        class="text-[#5E896E] text-[16px] font-[300] leading-[150%] hover:cursor-pointer hover:underline"
+        (click)="pricing()"
+      >
+        Pricing
+      </ul>
+    </div>
+    <div class="flex mt-4 lg:mt-0">
+      <button
+        class="text-[#5E896E] text-[16px] font-[300] leading-[150%] px-3 py-2 rounded-lg w-24 lg:w-28 font-medium"
+        (click)="login()"
+      >
+        Log in
+      </button>
+      <button
+        class="bg-[#5E896E] text-[#fff] text-[12px] font-[300] leading-[150%] px-8 py-2 rounded-[8px] font-medium"
+        (click)="signup()"
+      >
+        Register
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,191 @@
+<div>
+  <!-- Header Section -->
+  <app-header-section></app-header-section>
+
+  <!-- Branding Section -->
+  <app-branding-section></app-branding-section>
+
+  <!-- Features Section -->
+  <app-features-section></app-features-section>
+
+
+<div class="bg-peer-faded-grey w-full py-12 box-border">
+  <div class="grid grids-col-1    lg:grid-cols-2 mx-auto w-[90%]">
+    
+    <div class="flex flex-col md:ml-20 ml-4 mt-20">
+      <div class="text-[#5E896E]  my-2 text-xs  font-medium uppercase bg-peer-mint w-fit  rounded-full p-2">Emissions Insights</div>
+      <div class="text-[#CFA16C] my-2 text-2xl md:text-3xl font-semibold leading-normal">
+        We simplify the tracking of  your
+        carbon footprint
+      </div>
+      <div class="text-[#123726] my-2 text-[17px] font-[400] leading-normal">
+        A self-service platform enabling you to understand the carbon footprint of your products & activities and makes responsible decisions to grow your positive climate handbook
+      </div>
+      <hr class="w-[80%] my-12" />
+
+      <div class="flexa flex flex-row  w-[100%] justify-between">
+        <div class="flexa-1 flex w-[50%] flex-col mt-3">
+          <!-- w-[114.5px] h-[109.507px] -->
+          <img
+            class=" w-18 md:w-10 lg:w-32 mb-3 "
+            src="/assets/svgs/Group 1000002083.svg"
+            alt=""
+          />
+          <div class="text-[#123726] text-[17px] leading-normal text-left font-[700]">
+            Holistic Reporting
+          </div>
+          <div class="text-[#374151] text-left text-sm font-[300] leading-normal my-2 p-0">
+            Calculate Scope 1,2 & 3 activity <br />
+            data into comprehensive report
+        </div>
+        </div>
+        <div class="flexa-1 flex w-[50%] flex-col mt-3 justify-start">
+          <img
+            class=" w-18 md:w-10 lg:w-32 mb-3"
+            src="/assets/svgs/Group 1000002084.svg"
+            alt=""
+          />
+          <div class="text-[#123726] text-[17px] leading-normal text-left font-[700]">
+            Sustainability Expert
+          </div>
+          <div class="text-[#374151] text-left text-sm  font-[300] leading-normal my-2 p-0">
+            Dedicated Sustainability support <br />
+            and validators by your side
+          </div>
+        </div>
+      </div>
+     
+    </div>
+    <div class="h-full img reversed-1 grid justify-center">
+      <img class="object-cover" src="/assets/images/landing/landing_page_1.svg" alt="Working Images" />
+    </div>
+  </div>
+</div>
+
+<div class="bg-peer-faded-grey w-full py-12 box-border">
+  <div class="grid grids-col-1   flex-col-reverse  lg:grid-cols-2 mx-auto w-[90%]">
+    <div class="h-full img reversed-1 grid justify-center">
+      <img class="object-cover" src="/assets/images/landing/landing_page_2.svg" alt="Rectangle" />
+    </div>
+    <div class="flex flex-col md:ml-20 ml-4 mt-20">
+      <div class="text-[#5E896E]  my-2 text-xs  font-medium uppercase bg-peer-mint w-fit  rounded-full p-2">Collaborate Effort</div>
+      <div class="text-[#CFA16C] my-2 text-2xl md:text-3xl font-semibold leading-normal">
+        Empower your sustainability
+        team, Anywhere, Anytime
+      </div>
+      <div class="text-[#123726] my-2 text-[17px] font-[400] leading-normal">
+        Discover how SaaSTAIN unites your team across branches and departments enabling remote data entry for emissions accounting. From tracking primary data to fostering a collaborative reduction journey, Our platform got you covered 
+      </div>
+      <hr class="w-[80%] my-12" />
+      <div class="grid  grid-col-1  md:grid-cols-2">
+        <div  *ngFor="let feature of featuresArray"  class="flex flex-row gap-[10px] mt-8">
+          <img
+            src="/assets/images/landing/landingvector.svg"
+            alt="placeholder"
+          />
+          <div class="text-base  font-semibold text-[#123726]  leading-normal">{{feature.text}}</div>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="bg-peer-faded-grey w-full py-12 box-border">
+  <div class="grid grids-col-1    lg:grid-cols-2 mx-auto w-[90%]">
+    
+    <div class="flex flex-col md:ml-20 ml-4 mt-20">
+      <div class="text-[#5E896E]  my-2 text-xs  font-medium uppercase bg-peer-mint w-fit  rounded-full p-2">Verification Profile</div>
+      <div class="text-[#CFA16C] my-2 text-2xl md:text-3xl font-semibold leading-normal">
+        Verified emission profile that empower your sustainability decisions
+      </div>
+      <div class="text-[#123726] my-2 text-[17px] font-[400] leading-normal">
+        The journey to a greener future varies for each business, and whether you leverage them individually or collectively. SaaStain's flexibility paves the path that suits your businee, helping  you achieve low emission market performance in procurement and finance 
+      </div>
+      <div class="grid  grid-col-1  md:grid-cols-2">
+        <div class="flex flex-row gap-4 mt-2 items-center">
+          <img src="/assets/images/shield-check.svg" allt="featureicon" />
+          <div class="text-[17px] text-[#5E896E] font-[500] leading-normal">Communicate your company climate measures</div>
+        </div>
+        <div class="flex flex-row gap-4 mt-2">
+          <img src="/assets/images/shield-check.svg" allt="featureicon" />
+          <div class="text-[17px] text-[#5E896E] font-[500] leading-normal">Track Carbon footprint progress</div>
+        </div>
+        <div class="flex flex-row gap-4 mt-2">
+          <img src="/assets/images/shield-check.svg" allt="featureicon" />
+          <div class="text-[17px] text-[#5E896E] font-[500] leading-normal">10% Reduction in costs</div>
+        </div>
+        <div class="flex flex-row gap-4 mt-2">
+          <img src="/assets/images/shield-check.svg" allt="featureicon" />
+          <div class="text-[17px] text-[#5E896E] font-[500] leading-normal">20% Increase in business</div>
+        </div>
+      </div>
+     
+    </div>
+    <div class="h-full img reversed-1 grid justify-center">
+      <img class="object-cover" src="/assets/images/landing/landing_page_3.svg" alt="Rectangle" />
+    </div>
+  </div>
+</div>
+
+
+
+<div class="w-full py-12 box-border">
+  <div class="flex flex-col w-[90%] mx-auto justify-center items-center">
+    <div class="text-center gap-4">
+      <div class="text-[#CFA16C] title text-[32px] text-center font-[700] my-8 leading-normal">Frequently asked Questions</div>
+      <div class="text-[#5E896E] para text-[22px] text-center font-[400] my-8 leading-normal">
+        From understanding what SaaS is to exploring features, security measures, customer support, and subscription management, we've got you covered. We're committed to providing you with not only a high-quality software solution but also the knowledge you need to maximize its benefits.
+      </div>
+    </div>
+      <app-accordion></app-accordion>
+      </div>
+    </div>
+  </div>
+
+
+<div class="free-triaL bg-peer-faded-grey ">
+
+  <div class="text-[32px] title text-center text-[#123726] my-4 font-[700] leading-[130%]">Try for Free. No Strings Attached.</div>
+
+  <div class="text-[19px] para text-center text-[#5E896E] my-4 font-[400] leading-normal">Become  part of the solution in the combat against climate change</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3">
+  <div class="fleX px-10" *ngFor="let  payment of paymentOptions">
+
+    <img src="/assets/images/shield-check.svg" class="icoN"/>
+
+    <div class="text-[17px] exp font-[500] leading-normal text-[#123726] mt-2">{{payment}}</div>
+
+  </div>
+
+</div>
+
+
+<div class="text-center mx-6">
+
+  <button class="text-[#fff] rounded-[8px] bg-[#5E896E] px-[17px] py-[16px] text-[14px] text-center font-[400] leading-[20px]">Get Started</button>
+
+</div>
+
+</div>
+
+
+<div class="get-starteD">
+
+  <div class="text-[32px] title text-center font-[700] leading-normal text-[#F0E0BF]">Get started with SaaSTAIN today</div>
+
+  <div class="text-[19px] para text-center text-[#D9D9D9] my-4 font-400 leading-normal">Join sustainability teams who have streamlined the way they manage their environmental impacts</div>
+
+  <div class="text-center  w-1/2 flex flex-col mx-auto md:flex-row  gap-8  justify-evenly">
+
+    <button class="text-[#5E896E] rounded-[8px] bg-[#E4FCE6] px-[17px] py-[16px] text-[14px] text-center font-[400] leading-[20px]">Get Started</button>
+ 
+    <button class="text-[#fff] rounded-[8px] bg-[#5E896E] px-[17px] py-[16px] text-[14px] text-center font-[400] leading-[20px]">Request Demo</button>
+
+  </div>
+</div>
+

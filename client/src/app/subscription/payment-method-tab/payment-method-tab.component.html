@@ -1,0 +1,124 @@
+<div class="conT">
+  <div class="text-white font-bold text-2xl">Payment Method</div>
+
+  <div class="flex mt-5 bg-white rounded px-px py-px">
+    <ng-container *ngFor="let tab of tabs; let i = index">
+      <button
+        class="flex-1 px-4 py-2 text-center cursor-pointer transition-all duration-300 focus:outline-none"
+        [ngClass]="{
+          'bg-green-500 text-white rounded': activeTabIndex === i,
+          'bg-white text-black border border-transparent rounded':
+            activeTabIndex !== i
+        }"
+        (click)="setActiveTab(i)"
+      >
+        {{ tab }}
+      </button>
+    </ng-container>
+  </div>
+
+  <div class="mt-4">
+    <div *ngIf="activeTabIndex === 0">
+      <div class="bg-white rounded p-5">
+        <div class="flex justify-between items-center">
+          <div class="flex gap-2 items-center">
+            <div class="bg-green-500 px-2 py-1 rounded-full text-center">
+              <mat-icon class="text-white text-lg font-bold">done</mat-icon>
+            </div>
+            <div>
+              <button
+                class="font-medium border border-transparent px-3 py-2 rounded hover:border-green-500"
+              >
+                Add new card
+              </button>
+            </div>
+          </div>
+          <div class="flex gap-2 items-center">
+            <div><img src="/assets/svgs/Master-Card.svg" alt="" /></div>
+            <div><img src="/assets/images/visa.svg" class="h-4" /></div>
+          </div>
+        </div>
+        <div class="griD items-center mt-5">
+          <div class="items-center">
+            <div class="text-lg">Card Number</div>
+            <div class="text-xs text-gray-400">
+              Enter the 16-digit card number on the card
+            </div>
+          </div>
+          <div class="flex gap-2 items-center">
+            <input
+              type="text"
+              class="py-3 px-5 border rounded w-72 focus:outline-green-500"
+            />
+            <div
+              class="bg-transparent px-2 py-1 rounded-full text-center border border-gray-400"
+            >
+              <mat-icon class="text-lg font-bold text-gray-400">done</mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="griD items-center mt-5">
+          <div class="items-center">
+            <div class="text-lg">Card Owner</div>
+            <div class="text-xs text-gray-400">Enter the name on the card</div>
+          </div>
+          <div class="gap-2 items-center">
+            <input
+              type="text"
+              class="py-3 px-5 border rounded focus:outline-green-500 w-72"
+            />
+          </div>
+        </div>
+        <div class="griD items-center mt-5">
+          <div class="items-center">
+            <div class="text-lg">Expiry</div>
+            <div class="text-xs text-gray-400">
+              Enter the expiration date of the card
+            </div>
+          </div>
+          <div class="flex gap-2 items-center">
+            <div>
+              <input
+                type="text"
+                class="py-2 px-3 border rounded w-14 focus:outline-green-500"
+              />
+            </div>
+            <div class="font-bold">/</div>
+            <div>
+              <input
+                type="text"
+                class="py-2 px-3 border rounded w-14 focus:outline-green-500"
+              />
+            </div>
+            <div>
+              <div class="font-semibold">CVV2</div>
+              <div class="text-gray-400">Security code</div>
+            </div>
+            <div>
+              <input
+                type="text"
+                class="py-2 px-3 border rounded w-14 focus:outline-green-500"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="activeTabIndex === 1">
+      <div class="bg-white rounded p-10">
+        <div class="flex justify-center">
+          <input
+            type="text"
+            class="bg-grey-500 border focus:outline-green-500 rounded px-4 py-2 w-96"
+            placeholder="07xx xxx xxx"
+          />
+        </div>
+        <div class="mt-5 flex justify-center">
+          <button class="bg-black text-white px-4 py-2 rounded w-80">
+            Send
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

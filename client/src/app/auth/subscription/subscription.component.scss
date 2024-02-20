@@ -1,0 +1,355 @@
+.containeR {
+
+    background: var(--neutral-2, #000);
+
+    width: 100%;
+
+    flex-shrink: 0;
+
+}
+
+.top-seC {
+
+    padding: 5% 0;
+
+}
+
+.header-texT {
+
+    color: var(--secondary-colour, #34b206);
+
+    font-size: 36px;
+
+    font-weight: 500;
+
+    text-align: center;
+
+    letter-spacing: 2px;
+
+}
+
+.top-texT {
+
+    margin: 3% 27%;
+
+    color: var(--neutral-1, #fff);
+
+    text-align: center;
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+    letter-spacing: 2px;
+
+    line-height: 150%;
+
+}
+
+@keyframes fake {
+
+    from {
+
+        opacity: 1;
+
+   }
+
+    to {
+
+        opacity: 1;
+
+   }
+
+}
+
+.sub-tabS {
+
+    width: 100%;
+
+}
+
+.sub-tabS .state {
+
+    display: none;
+
+}
+
+.sub-tabS .flex-tabs {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+}
+
+.sub-tabS .flex-tabs .tab {
+
+    flex-grow: 1;
+
+    color: #fff;
+
+    font-size: 29px;
+
+    font-style: normal;
+
+    font-weight: 700;
+
+    line-height: normal;
+
+}
+
+.tab-panel{
+
+    background-image: url("https://img.freepik.com/premium-photo/credit-cards-white_38810-7896.jpg?w=826");
+
+    background-size: cover;
+
+    object-fit: cover;
+
+    height: 120vh;
+
+    width: 100%;
+
+}
+
+.sub-tabS .flex-tabs .panel {
+
+    background-color: rgb(255,255,255, .7);
+
+    padding: 20px;
+
+    display: none;
+
+    height: 120vh;
+
+    width: 100%;
+
+    flex-basis: auto;
+
+    transition: 0.15s ease-in;
+
+}
+
+
+.labels{
+    
+    width: 60%;
+
+    display: flex;
+
+    margin: 2% 20%;
+
+}
+
+.labels .tab{
+
+    display: inline-block;
+
+    padding: 10px;
+
+    width: 30%;
+
+    vertical-align: top;
+
+    background-color: #000;
+
+    text-align: center;
+
+    cursor: hand;
+
+    cursor: pointer;
+
+    border-bottom: 7px solid #000;
+
+}
+
+.h3{
+    font-size: 22px;
+
+    font-weight: 600;
+
+    color: #34b206;
+
+    margin: 2% 10%;
+}
+
+.h2{
+    font-size: 26px;
+
+    font-weight: 600;
+
+    margin: 2% 10%;
+}
+
+#tab-one:checked ~ .tabs #tab-one-label, #tab-two:checked ~ .tabs #tab-two-label{
+
+    background-color: #000;
+
+    color: #34b206;
+
+    cursor: default;
+
+    border-bottom: 7px solid #34b206;
+
+    width: 30%;
+
+}
+#tab-one:checked ~ .tabs #tab-one-panel, #tab-two:checked ~ .tabs #tab-two-panel{
+
+    display: block;
+
+}
+
+.cardS{
+
+    display: flex;
+
+    gap: 20px;
+
+    width: 100%;
+
+    padding: 3% 10%;
+
+}
+
+.card-onE{
+
+    background-image: url("/assets/images/mesh-gradient\ \(1\)\ 1.png");
+
+    width: 33%;
+
+    padding: 5% 3%;
+
+    border-radius: 15px;
+
+}
+
+.card-toP{
+
+    text-align: center;
+
+    color: #fff;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+}
+
+.hR{
+
+    background-color: #000;
+
+    height: 3px;
+
+    margin: 3% 0;
+
+}
+
+.card-texT{
+
+    margin: 8% 0;
+
+    font-size: 16px;
+
+}
+
+.card-lisT{
+
+    list-style-type: circle;
+
+    margin-bottom: 10%;
+
+}
+
+li{
+
+    margin: 2% 5%;
+
+}
+
+.card-pricE{
+
+    text-align: center;
+
+    color: #fff;
+
+    font-size: 26px;
+
+    font-weight: 300; 
+
+    margin: 5% 0;
+
+}
+
+.card-pricE span{
+
+    font-weight: 700; 
+
+}
+
+.btN{
+
+    display: flex;
+
+    background-color: #000;
+
+    color: #fff;
+
+    width: 210px;
+
+    height: 45px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    margin-left: 10%;
+
+    margin-top: 10%;
+
+    font-size: 17px;
+
+    font-weight: 400;
+    
+}
+
+
+// @media (max-width: 600px) {
+//     .flex-tabs {
+//         flex-direction: column;
+//    }
+//     .flex-tabs .tab {
+//         background: #fff;
+//         border-bottom: 1px solid #ccc;
+//    }
+//     .flex-tabs .tab:last-of-type {
+//         border-bottom: none;
+//    }
+//     .flex-tabs #tab-one-label {
+//         order: 1;
+//    }
+//     .flex-tabs #tab-two-label {
+//         order: 3;
+//    }
+//     .flex-tabs #tab-one-panel {
+//         order: 2;
+//    }
+//     .flex-tabs #tab-two-panel {
+//         order: 4;
+//    }
+//     #tab-one:checked ~ .tabs #tab-one-label, #tab-two:checked ~ .tabs #tab-two-label {
+//         border-bottom: none;
+//    }
+//     #tab-one:checked ~ .tabs #tab-one-panel, #tab-two:checked ~ .tabs #tab-two-panel {
+//         border-bottom: 1px solid #ccc;
+//    }
+// }

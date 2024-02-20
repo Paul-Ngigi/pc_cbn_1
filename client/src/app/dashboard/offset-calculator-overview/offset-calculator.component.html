@@ -1,0 +1,27 @@
+<div class="carD">
+  <div class="card-headeR">
+    <div class="header-contenT">
+      <h2 class="card-titlE">Offset Calculator</h2>
+      <div class="subtitle-containeR">
+        <apx-chart
+          [series]="chartOptions.series"
+          [chart]="chartOptions.chart"
+          [plotOptions]="chartOptions.plotOptions"
+          [labels]="chartOptions.labels"
+          [stroke]="chartOptions.stroke"
+          [colors]="chartOptions.colors"
+          [labels]="chartOptions.labels"
+          [fill]="chartOptions.fill"
+        ></apx-chart>
+        <p class="card-subtitlE">of your CO2 emissions are currently being offset (offset calculator)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-positioN">
+    <div class="card-actionS">
+      <button class="card-buttoN" type="button">offset</button>
+      <img src="/assets/images/mdi-light_information.svg" />
+    </div>
+  </div>
+</div>

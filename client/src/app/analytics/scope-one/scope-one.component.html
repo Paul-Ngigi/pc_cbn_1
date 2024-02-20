@@ -1,0 +1,137 @@
+<div class="container">
+
+  <div class="flexx">
+
+    <div class="flex-one">
+
+      <div class="label">Choose a location</div>
+
+      <div class="dropdown">
+        <div class="dropdown-button">
+          <div class="left">All locations</div>
+          <div class="right"><i class="fa-solid fa-caret-down"></i></div>
+        </div>
+        <div class="dropdown-content">
+          <a href="#">Option 1</a>
+          <a href="#">Option 2</a>
+          <a href="#">Option 3</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="flex-one">
+
+      <div class="label">Choose a Year</div>
+
+      <div class="dropdown">
+        <div class="dropdown-button">
+          <div class="left">All locations</div>
+          <div class="right"><i class="fa-solid fa-caret-down"></i></div>
+        </div>
+        <div class="dropdown-content">
+          <a href="#">Option 1</a>
+          <a href="#">Option 2</a>
+          <a href="#">Option 3</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="block px-[32px] mt-[5%] py-[52px] rounded-lg bg-white shadow-md">
+    <div class="breakdown text-[#374151] text-left text-[16px] font-[700] leading-[150%]">Your Scope Breakdown</div>
+    <div class="flex gap-[60px] w-12/12">
+      <div class="chart w-4/12">
+        <app-scope-one-breakdown></app-scope-one-breakdown>
+      </div>
+      <div class="w-8/12">
+        <table class="table-fixed">
+          <thead>
+            <tr class="bg-[#F9FAFB]">
+              <th></th>
+              <th class="text-left text-[#6B7280] py-4 px-2 text-[12px] font-[600] leading-[150%]">Emissions Breakdown</th>
+              <th class="text-left text-[#6B7280] py-4 px-2 text-[12px] font-[600] leading-[150%]">Emission tCO2e</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><i class="fa-solid text-[#C81E1E] fa-circle"></i></td>
+              <td class="text-[16px] py-4 px-2 font-[500] leading-[150%]">Stationary Combustion</td>
+              <td class="number text-[16px] py-4 px-2 font-[600] leading-[25px] text-[#A7B3A7]">5000</td>
+            </tr>
+            <tr class="bg-[#F9FAFB]">
+              <td><i class="fa-solid text-[#1C64F2] fa-circle"></i></td>
+              <td class="text-[16px] py-4 px-2 font-[500] leading-[150%]">Process Emissions</td>
+              <td class="number text-[16px] py-4 px-2 font-[600] leading-[25px] text-[#A7B3A7]">5000</td>
+            </tr>
+            <tr>
+              <td><i class="fa-solid text-[#CFA16C] fa-circle"></i></td>
+              <td class="text-[16px] py-4 px-2 font-[500] leading-[150%]">Mobile Combustion</td>
+              <td class="number text-[16px] py-4 px-2 font-[600] leading-[25px] text-[#A7B3A7]">5000</td>
+            </tr>
+            <tr class="bg-[#F9FAFB]">
+              <td><i class="fa-solid text-[#5E896E] fa-circle"></i></td>
+              <td class="text-[16px] py-4 px-2 font-[500] leading-[150%]">Fleet Emissions</td>
+              <td class="number text-[16px] py-4 px-2 font-[600] leading-[25px] text-[#A7B3A7]">5000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex w-12/12 gap-[40px]">
+
+    <div class="block rounded-lg p-6 h-[100%] mt-[30px] bg-white shadow-md w-8/12">
+
+      <div class="text-left text-[#374151] text-[16px] font-[700] leading-[150%]">Progress Tracking</div>
+
+      <app-progress-tracking-graph></app-progress-tracking-graph>
+
+    </div>
+
+    <div class="block w-4/12">
+
+      <app-offsetcalculator></app-offsetcalculator>
+  
+      <div class="shadow-md bg-[#fff] block justify-center p-[20px] ml-[30px] rounded-[16px] mt-[30px]">
+  
+        <div class="grid grid-cols-2 my-3 gap-12">
+  
+          <div class="text-[20px] font-[700] leading-[150%] text-[#374151]">Actions</div>
+  
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <path
+                d="M15.3985 4.19995C15.0271 4.19995 14.6711 4.34745 14.4085 4.61C14.146 4.87255 13.9985 5.22865 13.9985 5.59995C13.9985 5.97125 14.146 6.32735 14.4085 6.5899C14.6711 6.85245 15.0271 6.99995 15.3985 6.99995H19.0189L10.2087 15.8102C10.0749 15.9393 9.96828 16.0938 9.89491 16.2646C9.82154 16.4354 9.78292 16.6191 9.7813 16.805C9.77969 16.9909 9.81511 17.1752 9.8855 17.3473C9.9559 17.5193 10.0599 17.6757 10.1913 17.8071C10.3227 17.9386 10.4791 18.0425 10.6511 18.1129C10.8232 18.1833 11.0075 18.2187 11.1934 18.2171C11.3793 18.2155 11.563 18.1769 11.7338 18.1035C11.9046 18.0301 12.0591 17.9235 12.1883 17.7898L20.9985 8.97955V12.6C20.9985 12.9713 21.146 13.3274 21.4085 13.5899C21.6711 13.8525 22.0271 14 22.3985 14C22.7698 14 23.1259 13.8525 23.3884 13.5899C23.651 13.3274 23.7985 12.9713 23.7985 12.6V5.59995C23.7985 5.22865 23.651 4.87255 23.3884 4.61C23.1259 4.34745 22.7698 4.19995 22.3985 4.19995H15.3985Z"
+                fill="#5E896E" />
+              <path
+                d="M6.99922 7C6.25661 7 5.54442 7.295 5.01932 7.8201C4.49422 8.3452 4.19922 9.05739 4.19922 9.8V21C4.19922 21.7426 4.49422 22.4548 5.01932 22.9799C5.54442 23.505 6.25661 23.8 6.99922 23.8H18.1992C18.9418 23.8 19.654 23.505 20.1791 22.9799C20.7042 22.4548 20.9992 21.7426 20.9992 21V16.8C20.9992 16.4287 20.8517 16.0726 20.5892 15.8101C20.3266 15.5475 19.9705 15.4 19.5992 15.4C19.2279 15.4 18.8718 15.5475 18.6093 15.8101C18.3467 16.0726 18.1992 16.4287 18.1992 16.8V21H6.99922V9.8H11.1992C11.5705 9.8 11.9266 9.6525 12.1892 9.38995C12.4517 9.1274 12.5992 8.7713 12.5992 8.4C12.5992 8.0287 12.4517 7.6726 12.1892 7.41005C11.9266 7.1475 11.5705 7 11.1992 7H6.99922Z"
+                fill="#5E896E" />
+            </svg>
+          </div>
+        </div>
+  
+        <div class="flex my-12 gap-2">
+  
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M8.40156 2.80005C7.65896 2.80005 6.94677 3.09505 6.42166 3.62015C5.89656 4.14525 5.60156 4.85744 5.60156 5.60005V22.4001C5.60156 23.1427 5.89656 23.8548 6.42166 24.3799C6.94677 24.9051 7.65896 25.2001 8.40156 25.2001H19.6016C20.3442 25.2001 21.0564 24.9051 21.5815 24.3799C22.1066 23.8548 22.4016 23.1427 22.4016 22.4001V10.3796C22.4014 9.6371 22.1063 8.92503 21.5812 8.40005L16.8016 3.62045C16.2766 3.09531 15.5645 2.80021 14.822 2.80005H8.40156ZM15.4016 11.2C15.4016 10.8287 15.2541 10.4727 14.9915 10.2101C14.729 9.94755 14.3729 9.80005 14.0016 9.80005C13.6303 9.80005 13.2742 9.94755 13.0116 10.2101C12.7491 10.4727 12.6016 10.8287 12.6016 11.2V16.2205L10.7914 14.4102C10.6622 14.2765 10.5077 14.1699 10.3369 14.0965C10.1661 14.0231 9.98242 13.9845 9.79652 13.9829C9.61063 13.9813 9.42628 14.0167 9.25423 14.0871C9.08217 14.1575 8.92586 14.2614 8.79441 14.3929C8.66296 14.5243 8.55901 14.6807 8.48861 14.8527C8.41822 15.0248 8.3828 15.2091 8.38441 15.395C8.38603 15.5809 8.42465 15.7646 8.49802 15.9354C8.57139 16.1062 8.67805 16.2607 8.81176 16.3898L13.0118 20.5898C13.2743 20.8523 13.6303 20.9998 14.0016 20.9998C14.3728 20.9998 14.7288 20.8523 14.9914 20.5898L19.1914 16.3898C19.4464 16.1258 19.5875 15.7722 19.5843 15.4051C19.5811 15.038 19.4339 14.6869 19.1743 14.4273C18.9147 14.1677 18.5636 14.0205 18.1965 14.0173C17.8294 14.0141 17.4758 14.1552 17.2118 14.4102L15.4016 16.2205V11.2Z"
+                fill="#5E896E" />
+            </svg>
+          </div>
+  
+          <div class="text-[16px] font-[700] leading-[150%] text-[#1F2937]">Export PDF</div>
+        </div>
+  
+        <div class="text-[16px] font-[400] leading-[150%] text-[#A7B3A7] my-3">Export this report in pdf</div>
+  
+      </div>
+  
+    </div>
+  </div>
+
+</div>

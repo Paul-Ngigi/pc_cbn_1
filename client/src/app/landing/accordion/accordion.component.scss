@@ -1,0 +1,32 @@
+.example-accordion-item {
+    display: block;
+    border: solid 1px #ccc;
+}
+  
+.example-accordion-item-header {
+  border-radius: 9px;
+  background: var(--Peer-Carbon-Faded-Brown, #FCF5EB);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: var(--Peer-Carbon--Green, #5E896E);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  padding: 16px 48px 16px 16px;
+}
+
+@media only screen and (max-width: 500px){
+  .grid{
+    display: block;
+  }
+  .accord{
+    width: 20rem;
+    margin: 4% 0;
+  }
+}
+  
+
+  

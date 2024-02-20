@@ -1,0 +1,41 @@
+<div>
+    <div class="font-semibold text-xs text-[#374151]">
+      Reports > {{ activatedTab }}
+    </div>
+    <div class="w-6/12 mt-3">
+      <app-reusable-slidable-tab
+        [tabs]="tabs"
+        (tabIndexEmitter)="tabChange($event)"
+      ></app-reusable-slidable-tab>
+    </div>
+    <div class="uc-tab-contenT mt-6">
+      <!-- Overview -->
+      <div *ngIf="activatedTabIndex == 0">
+        <div class="my-4">
+            <app-emissions-overview></app-emissions-overview>
+        </div>
+      </div>
+  
+      <!-- scope 1 -->
+      <div *ngIf="activatedTabIndex == 1">
+        <div class="my-4">
+            <app-scope-one></app-scope-one>
+        </div>
+      </div>
+  
+      <!-- scope 2 -->
+      <div *ngIf="activatedTabIndex == 2">
+        <div class="my-4">
+            <app-scope-two></app-scope-two>
+        </div>
+      </div>
+
+      <!-- scope 3 -->
+      <div *ngIf="activatedTabIndex == 3">
+        <div class="my-4">
+            <app-scope-three></app-scope-three>
+        </div>
+      </div>
+  
+    </div>
+  </div>

@@ -1,0 +1,96 @@
+<div class="bg-white shadow-gray-200 rounded py-10 px-5 w-11/12 containneR">
+  <div class="text-lg font-bold">Goals</div>
+
+  <div class="mt-5">
+    <table class="min-w-full table-fixed mt-3">
+      <thead
+        class="bg-transparent text-black dark:divide-gray-700 border rounded"
+      >
+        <tr class="text-center">
+          <th
+            scope="col"
+            class="py-3 px-3 text-xs font-medium tracking-wider text-center text-black uppercase"
+          >
+            Innitiative
+          </th>
+          <th
+            scope="col"
+            class="py-3 px-3 text-xs font-medium tracking-wider text-center text-black uppercase"
+          >
+            Assignee
+          </th>
+          <th
+            scope="col"
+            class="py-3 px-3 text-xs font-medium tracking-wider text-center text-black uppercase"
+          >
+            Division
+          </th>
+          <th
+            scope="col"
+            class="py-3 px-3 text-xs font-medium tracking-wider text-center text-black uppercase"
+          >
+            Email
+          </th>
+          <th
+            scope="col"
+            class="py-3 px-3 text-xs font-medium tracking-wider text-center text-black uppercase"
+          >
+            Status
+          </th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-transparent" *ngFor="let goal of goals">
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-300">
+          <td
+            class="py-4 px-6 text-sm font-medium text-center text-gray-900 whitespace-nowrap"
+          >
+            {{ goal.initiative }}
+          </td>
+          <td
+            class="py-4 px-6 text-sm font-medium text-center text-gray-900 whitespace-nowrap hover:cursor-pointer"
+          >
+            <img src="{{ goal.assignee }}" alt="assignee" class="mx-auto" />
+          </td>
+          <td
+            class="py-4 px-6 text-sm font-medium text-center text-gray-900 whitespace-nowrap"
+          >
+            {{ goal.division }}
+          </td>
+          <td
+            class="py-4 px-6 text-sm font-medium text-center whitespace-nowrap"
+          >
+            {{ goal.email }}
+          </td>
+          <td
+            class="py-4 px-6 text-sm font-medium text-center whitespace-nowrap"
+          >
+            <div
+              class="px-3 py-2 gap-2 border rounded w-24 text-center hover:cursor-pointer mx-auto"
+            >
+              <div>{{ goal.status }}</div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+      <tbody class="bg-white divide-transparent">
+        <tr>
+          <td>
+            <div
+              class="bg-green-500 flex items-center mt-3 px-3 py-2 gap-2 rounded w-40 hover:cursor-pointer mx-auto"
+            >
+              <div><mat-icon class="text-white">add</mat-icon></div>
+              <div class="text-white">New Initiative</div>
+            </div>
+          </td>
+          <td>
+            <div
+              class="px-3 py-2 gap-2 border rounded w-16 text-center hover:cursor-pointer mx-auto"
+            >
+              <div>Add</div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

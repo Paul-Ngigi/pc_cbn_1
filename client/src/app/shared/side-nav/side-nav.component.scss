@@ -1,0 +1,55 @@
+.sidenaV {  
+  background: #fff;
+  transition: all 0.5s ease;
+  width: 229px;
+  top: 0;
+  bottom: 0;
+  margin-top: 86px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: fixed;
+  padding: 16px 12px;
+  border-right: 1px solid var(--cool-gray-200, #E5E7EB);;
+
+  }
+
+
+.labeL{
+  color: var(--Peer-Carbon-Grey, #A7B3A7);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 18px */
+  padding-bottom: 22px;
+  }
+
+.fleX{
+  display: flex;
+  gap: 16px;
+  padding-bottom: 38px;
+}
+
+.fleX .spaceup{
+  padding-bottom: 24px;
+}
+
+.down{
+  padding-top: 24px;
+}
+
+.line{
+  color: var(--cool-gray-200, #E5E7EB);
+}
+
+.texT{
+  color: var(--Peer-Carbon--Green, #5E896E);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+}
+
+.coloR{
+  color: var(--cool-gray-800, #1F2937);
+}
+

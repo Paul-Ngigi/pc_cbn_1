@@ -1,0 +1,30 @@
+.uc-tabS ul{
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    width: 60%;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+    align-items: center;
+    color: #34B206;
+    font-size: 16px;
+    font-weight: bold;  
+  }
+  .uc-tabS ul li a{
+    padding: 10px 50px;
+    background: transparent;
+    cursor: pointer;
+    display: block;
+    border-bottom: 4px solid transparent;
+    min-width: 80px;
+    text-align: center;
+  }
+  .uc-tabS ul li a.activE{
+    background-color: transparent;
+    color: #000;
+    border-bottom: 4px solid #34B206;
+  }
+  .uc-tabS ul li a:hover{
+    color: #34B206;
+  }
+  

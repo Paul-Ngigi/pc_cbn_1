@@ -1,0 +1,53 @@
+<div>
+  <div class="font-bold text-base">Orders</div>
+  <div class="flex justify-between mt-3">
+    <div
+      class="flex gap-3 text-white bg-black rounded-3xl px-3 py-2 w-56 items-center"
+    >
+      <div>Showing: All Past Orders</div>
+      <img src="/assets/images/reservation-orders.svg" class="h-6" />
+    </div>
+    <div
+      class="flex gap-3 text-white bg-black rounded-3xl px-3 py-2 items-center w-40 cursor-pointer"
+      (click)="download()"
+    >
+      <div>Download: CSV</div>
+      <img src="/assets/images/download.svg" class="h-6" />
+    </div>
+  </div>
+  <div class="mt-4">
+    <table class="w-full table-auto text-center">
+      <thead>
+        <th class="border-b border-t border-gray-500 px-4 py-2">Date</th>
+        <th class="border-b border-t border-gray-500 px-4 py-2">Order</th>
+        <th class="border-b border-t border-gray-500 px-4 py-2">Status</th>
+        <th class="border-b border-t border-gray-500 px-4 py-2">Source</th>
+        <th class="border-b border-t border-gray-500 px-4 py-2">Amount</th>
+        <th class="border-b border-t border-gray-500 px-4 py-2">Total Price</th>
+      </thead>
+      <tbody *ngFor="let order of orders">
+        <tr class="border-b border-gray-500">
+          <td class="px-4 py-2">
+            {{ order.created_at }}
+          </td>
+          <td class="px-4 py-2 font-semibold">
+            {{ order.orderNo }}
+          </td>
+          <td class="px-4 py-2">
+            <div
+              class="bg-[#34B206] text-white px-1 py-2 flex gap-2 justify-center items-center rounded-2xl"
+            >
+              <div class="w-2 h-2 bg-white rounded-full"></div>
+              <div>{{ order.status }}</div>
+            </div>
+          </td>
+          <td class="px-4 py-2">
+            {{ order.source }}
+          </td>
+          <td class="px-4 py-2 font-semibold">{{ order.weight }}t</td>
+          <td class="px-4 py-2 font-semibold">{{ order.amount | currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

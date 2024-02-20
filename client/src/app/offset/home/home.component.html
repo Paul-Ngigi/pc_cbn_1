@@ -1,0 +1,168 @@
+<div>
+  <div class="font-semibold text-xs text-[#374151]">
+    Offset > {{ activatedTab }}
+  </div>
+  <div class="w-5/12 mt-3">
+    <app-reusable-slidable-tab
+      [tabs]="tabs"
+      (tabIndexEmitter)="tabChange($event)"
+    ></app-reusable-slidable-tab>
+  </div>
+  <div class="uc-tab-contenT mt-6">
+    <!-- Overview -->
+    <div *ngIf="activatedTabIndex == 0">
+      <div class="my-4">
+        <!-- Top Section -->
+        <app-impact-cards></app-impact-cards>
+
+        <!-- Donut Graphs Section -->
+        <div class="my-7 md:grid md:grid-cols-2 xl:grid-cols-3 gap-3">
+          <div class="mb-4">
+            <app-project-portfolio-mix></app-project-portfolio-mix>
+          </div>
+          <div class="mb-4">
+            <app-offset-ratio></app-offset-ratio>
+          </div>
+          <app-offset-scope-focus></app-offset-scope-focus>
+        </div>
+
+        <!-- Portfolio Section -->
+        <div class="mt-7 bg-[#FCFCFC] p-4 rounded-[16px] shadow-sm">
+          <div class="flex justify-between my-4">
+            <div
+              class="spacE font-bold text-[#374151] text-[20px] font-[700] leading-[150%]"
+            >
+              Carbon Offset Projects
+            </div>
+            <div class="flex">
+              <form [formGroup]="searchFormGroup" (ngSubmit)="submitSearch()">
+                <div
+                  class="flex items-center border border-[#CFD3D4] px-4 rounded focus:outline-none focus:border-black"
+                >
+                  <button type="submit" class="border-none">
+                    <mat-icon class="font-medium hover:cursor-pointer">search</mat-icon>
+                  </button>
+                  <input
+                    placeholder="Search Project"
+                    class="px-4 py-2 bg-none focus:outline-none"
+                    formControlName="searchInput"
+                  />
+                </div>
+              </form>
+              
+              <div>
+                <select
+                  name=""
+                  id=""
+                  class="bg-[#EFF1F999] rounded w-64 px-3 py-2 focus:outline-none focus:border focus:border-[#ABAFB1]"
+                >
+                  <option class="text-[#ABAFB1]">FY2023</option>
+                </select>
+              </div>
+
+            </div>
+          </div>
+          <div
+            class="grid xl:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-3"
+            *ngIf="portfolios.length > 0; else noPortfolio"
+          >
+
+            <div *ngFor="let portfolio of portfolios">
+              <app-single-portfolio
+                [portfolio]="portfolio"
+              ></app-single-portfolio>
+            </div>
+
+          </div>
+          <ng-template #noPortfolio>
+            <div class="text-center">
+              There is no available portfolio at the moment
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project -->
+    <div *ngIf="activatedTabIndex == 1">
+      <div class="font-bold text-base">Projects({{ portfolios.length }})</div>
+      <div class="flex justify-between gap-6 mt-3 mb-12">
+        <div class="flex">
+          <form [formGroup]="searchFormGroup" (ngSubmit)="submitSearch()">
+            <div
+              class="flex items-center border border-[#CFD3D4] px-4 rounded focus:outline-none focus:border-black"
+            >
+              <button type="submit" class="border-none" (click)="submitSearch()">
+                <mat-icon class="font-medium hover:cursor-pointer">search</mat-icon>
+              </button>
+              <input
+                placeholder="Search Project"
+                class="px-4 py-2 bg-none focus:outline-none"
+                formControlName="searchInput"
+                type="search"
+              />
+            </div>
+          </form>
+          
+          <div>
+            <select
+              name=""
+              id=""
+              class="bg-[#EFF1F999] rounded w-64 px-3 py-2 focus:outline-none focus:border focus:border-[#ABAFB1]"
+            >
+              <option class="text-[#ABAFB1]">FY2023</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+      <div
+        *ngIf="portfolios.length > 0;"
+        class="grid xl:grid-cols-2 md:grid-cols-1 sm:grid-cols-1  mt-3 gap-3"
+      >
+        <div *ngFor="let portfolio of portfolios">
+          <app-single-portfolio
+            [portfolio]="portfolio"
+          ></app-single-portfolio>
+        </div>
+      </div>
+      <ng-template #noProjects>
+        <div class="text-center">
+          There is no available project at the moment
+        </div>
+      </ng-template>
+    </div>
+
+    <!-- Checkout -->
+    <div *ngIf="activatedTabIndex == 2">
+      <app-full-checkout></app-full-checkout>
+      <!-- <app-reusable-empty-checkout></app-reusable-empty-checkout> -->
+    </div>
+
+    <!-- Orders -->
+    <!-- <div *ngIf="activatedTabIndex == 3">
+      <div class="font-bold text-base">Orders</div>
+      <div *ngIf="orders.length > 0; else noOrder">
+        <div class="grid grid-cols-4 mt-3 gap-3">
+          <div *ngFor="let order of orders">
+            <div class="bg-white p-5 rounded">
+              <div class="flex items-center gap-2">
+                <div><img src="/assets/images/active.svg" alt="" /></div>
+                <div class="text-sm">{{ order.status | titlecase }}</div>
+              </div>
+              <div class="text-2xl mt-3 font-normal">
+                {{ order.weight }} Tonnes
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6">
+          <app-order-history [orders]="orders"></app-order-history>
+        </div>
+      </div>
+      <ng-template #noOrder>
+        <div class="text-center">You have placed 0 orders at the moment</div>
+      </ng-template>
+    </div> -->
+  </div>
+</div>

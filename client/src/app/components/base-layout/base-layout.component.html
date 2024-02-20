@@ -1,0 +1,16 @@
+<div class="w-screen min-h-screen">
+  <app-dashboard-navbar />
+  <div class="flex w-12/12 gap-[5px]">
+    <div class="w-2/12">
+      <app-side-nav></app-side-nav>
+    </div>
+    <div class="w-10/12">
+      <div class="px-16 py-8">
+        <router-outlet></router-outlet>
+        <div class="mt-24">
+          <app-dashboard-footer></app-dashboard-footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

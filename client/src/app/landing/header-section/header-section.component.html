@@ -1,0 +1,53 @@
+<div class="bg-[#F8EEDC] w-screen px-2">
+  <div
+    class="text-center  text-[30px]  lg:text-[48px] font-[700] leading-[130%] text-[#123726] py-4 animate-text"
+  >
+    Next-gen SaaS tool that <br  />
+    simplifies your carbon accounting
+  </div>
+
+  <div class=" mt-3   md:mt-6 para text-[#5E896E] leading-6 text-[16px] font-[400] md:leading-[150%] py-4 text-center animate-text">
+    An awesome & powerful tool for your business to effortlessly and accurately
+    <br   class="hidden  md:hidden-none " />
+    track and manage carbon emissions, while driving sustainable growth
+  </div>
+
+  <div
+    class="py-4 block mx-auto mb-8 sm:flex sm:flex-col items-center justify-center animate-text"
+  >
+    <form 
+    class="relative flex flex-row gap-8" 
+    autocomplete="off"
+    [formGroup]="joinWaitListFormGroup"
+    (submit)="validateForm()"
+    >
+      
+      <input
+        type="email"
+        placeholder="Your Email Address"
+        formControlName="email"
+        class="rounded-[8px] px-4 py-2 bg-[#fff] border-none shadow-black/5 shadow-lg text-[#000] placeholder:text-[#ABAFB1] place-content-center pr-12 focus:border focus:border-[#D9D9D9] focus:outline-none sm:w-full md:w-[22rem] lg:w-[26rem] xl:w-82"
+      />
+      <div class="btns">
+        <div class="submit py-2 h-full rounded-[8px] px-4 bg-[#123726]" *ngIf="!isLoading">
+          <button type="submit" class="text-[#fff]"  [disabled]="joinWaitListFormGroup.invalid">
+            Get Started
+          </button>
+        </div>
+        <div class="loader py-2 h-full rounded-[8px] px-4 bg-[#123726]" *ngIf="isLoading">
+          <div class="loader-componenT">
+              <app-loader></app-loader>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="animate-image">
+    <img
+      src="/assets/images/landing/header-image.svg"
+      alt=""
+      class="block mx-auto"
+    />
+  </div>
+</div>

@@ -1,0 +1,353 @@
+  .bg-imagE{
+    background-image: url("/assets/images/Tets 4 1authbg.png");
+    object-fit: cover;
+    background-size: cover;
+    min-height: 100%;
+    min-width: 100%;
+  }
+  
+  .lefT{
+    height: 568px;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #A7B3A7;
+    padding-top: 20%;
+    padding-left: 15%; 
+  }
+  
+  .login-logO{
+    display: flex;
+    width: 317px;
+    height: 85.411px;
+    justify-content: center;
+    align-items: center;
+    gap: 7.647px;
+  }
+  
+  .login-texT{
+    width: 548px;
+    flex-shrink: 0;
+    color: var(--cool-gray-700, #374151);
+    font-family: Nunito;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 3% 0;
+  }
+  
+  .right{
+    padding-top: 20%;
+    padding-left: 15%; 
+  }
+  
+  form{
+    gap: 27px;
+  }
+  
+  .inpuT{
+    margin: 5% 10%;
+    display: flex;
+    width: 521px;
+    height: 58px;
+    padding: 8px 16px;
+    gap: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--cool-gray-500, #6B7280);
+  }
+  
+  .unO{
+    width: 31px;
+    margin: 2% 0;
+  }
+  
+  .doS{
+    width: 490px;
+    display: block;
+  }
+  
+  .onE{
+    width: 31px;
+    margin: 2% 0;
+  }
+  
+  .twO{
+    width: 460px;
+    display: block;
+  }
+  
+  .inpuT i{
+    width: 30px;
+    margin: 3% 0;
+  }
+  
+  .sociaL img{
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+  
+  .labeL{
+    color: var(--black-4, #5E6366);
+    font-family: Nunito;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; 
+  }
+  
+  input{
+    outline: none;
+    width: 100%;
+    background: none;
+  }
+  
+  .inneRR::placeholder{
+    color: var(--cool-gray-800, #1F2937);
+    /* text-base/font-normal */
+    font-family: Nunito;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  
+  .inneR::placeholder{
+    color: var(--cool-gray-800, #1F2937);
+    font-family: Nunito;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 150%;
+  }
+
+  .checK{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 5% 10%;
+  }
+
+  .checkboX{
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--black-1, #CFD3D4);
+  }
+
+  .terms-texT{
+    color: var(--black-3, #83898C);
+    text-align: right;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .terms-pagE{
+    color: var(--Peer-Carbon--Green, #5E896E);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .forgoT{
+    color: var(--Peer-Carbon--Green, #5E896E);
+    /* text-base/font-medium */
+    font-family: Nunito;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; 
+  }
+  
+  .btn-logiN{
+    border-radius: 12px;
+    background: var(--green-500, #5E896E);
+    display: flex;
+    height: 44px;
+    padding: 17px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .passworD{
+    display: flex;
+    width: 506px;
+    height: 44px;
+    margin: 5% 10%;
+    padding: 17px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px;
+    background: var(--green-500, #5E896E);
+  }
+
+  .explaineR{
+    color: var(--black-2, #ABAFB1);
+    font-family: Nunito;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 375px;
+    margin: 5% 10%;
+  }
+  
+  span{
+    color: var(--Green, #32936F);
+    font-family: Nunito;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .buttoN{
+    flex: 1 0 0;
+    color: var(--Color, #FFF);
+    text-align: center;
+    /* text-sm/font-normal */
+    font-family: Nunito;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  
+  .loadeR {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 12px;
+    background: var(--green-500, #5E896E);
+    display: flex;
+    height: 44px;
+    padding: 17px 16px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  
+  .loadeR {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background: var(--green-500, #5E896E);
+    width: 506px;
+    height: 44px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  
+  .loader-componenT {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  
+  .sign-uP{
+    color: var(--Peer-Carbon--Green, #5E896E);
+    /* text-base/font-semibold */
+    font-family: Nunito;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    margin: 5% 10%;
+  }
+  
+  .linK{
+    color: var(--Peer-Carbon--Brown, #CFA16C);
+    font-family: Nunito;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+  }
+
+  @media only screen and (max-width: 500px){
+    .containeR{
+      height: auto;
+      overflow-y: auto;
+    }
+  
+    .bg-imagE{
+      display: block;
+      height: auto;
+    }
+  
+    .lefT{
+      width: 100%;
+      height: auto;
+      border-right: none;
+      padding-top: 20%;
+      padding-left: 5%; 
+    }
+  
+    .login-logO{
+      display: flex;
+      width: 200px;
+      height: 85.411px;
+      justify-content: center;
+      align-items: center;
+      gap: 7.647px;
+      object-fit: contain;
+    }
+    
+    .login-texT{
+      width: 300px;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      margin: 3% 3%;
+    }
+  
+    .righT{
+      width: 100%;
+      padding-top: 2%;
+      padding-left: 5%; 
+      padding-bottom: 20%;
+    }
+  
+    form{
+      gap: 0;
+    }
+    
+    .inpuT{
+      margin: 5% 5%;
+      display: flex;
+      width: 300px;
+      height: 58px;
+      padding: 8px 16px;
+      gap: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--cool-gray-500, #6B7280);
+    }
+  
+    .explaineR{
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      width: 300px;
+      margin: 5% 5%;
+    }
+  
+    .passworD{
+      width: 300px;
+      display: flex;
+      align-items: center;
+      gap: 103px;
+      align-self: stretch;
+      border-bottom: 2px solid #A7B3A7;
+      margin: 0 5%;
+      padding: 1% 0;
+    }
+  }

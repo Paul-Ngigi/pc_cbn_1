@@ -1,0 +1,20 @@
+.search-pagE{
+    padding: 20px;
+}
+
+input{
+    margin: 12px 0;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 22px;
+    background: transparent;
+    border: 1px solid #000;
+    border-radius: 15px;
+    width: 280px;
+    height: 55px;
+    padding-left: 50px;
+}
+
+input::placeholder{
+    color: #000;
+}

@@ -1,0 +1,26 @@
+<div class="grid grid-cols-2 gap-4">
+  <div>
+    <div class="text-black font-bold text-base">Complete Your Order</div>
+    <div
+      class="rounded bg-white h-96 flex flex-col justify-center items-center shadow-md"
+    >
+      <div class="color_primary_green text-center font-bold text-base">
+        No order yet
+      </div>
+      <button
+        class="btn bg-black text-white rounded px-4 py-2 mt-3"
+        (click)="placeOrder()"
+      >
+        Make an order
+      </button>
+    </div>
+  </div>
+  <div>
+    <div class="text-black font-bold text-base">Basket</div>
+    <div
+      class="border rounded bg-white h-48 flex flex-col justify-center items-center shadow-md"
+    >
+      <div class="text-center align-middle font-bold text-base">Empty</div>
+    </div>
+  </div>
+</div>

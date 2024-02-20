@@ -1,0 +1,10 @@
+<div>
+  <select
+    class="py-3 px-4 pr-9 block w-full bg-transparent border border-black rounded-md text-sm focus:outline-none focus:border-green-500"
+  >
+    <option>Month</option>
+    <option *ngFor="let month of months" [value]="month">
+      {{ month }}
+    </option>
+  </select>
+</div>

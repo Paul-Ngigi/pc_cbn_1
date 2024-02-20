@@ -1,0 +1,38 @@
+.containeR{
+
+    background-image: url("https://img.freepik.com/premium-photo/credit-cards-white_38810-7896.jpg?w=826");
+
+    background-size: cover;
+
+    object-fit: cover;
+
+    height: 140vh;
+
+    width: 100%;
+}
+
+.suB{
+
+    display: flex;
+
+    padding: 3% 0;
+
+    height: 140vh;
+
+    width: 100%;
+
+    background-color: rgb(0, 0, 0, .6);
+}
+
+.lefT{
+    width: 50%;
+    margin-left: 2%;
+}
+
+app-payment-method-tab{
+    margin: 5%;
+}
+
+.righT{
+    width: 50%;
+}

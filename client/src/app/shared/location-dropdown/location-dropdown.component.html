@@ -1,0 +1,10 @@
+<div>
+  <select
+    class="py-3 px-4 pr-9 block w-full bg-transparent border border-black rounded-md text-sm focus:outline-none focus:border-green-500"
+  >
+    <option>Location</option>
+    <option *ngFor="let location of locations" [value]="location">
+      {{ location }}
+    </option>
+  </select>
+</div>

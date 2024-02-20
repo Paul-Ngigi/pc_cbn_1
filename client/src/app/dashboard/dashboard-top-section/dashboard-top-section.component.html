@@ -1,0 +1,18 @@
+<div>
+  <div class="flex justify-between items-center">
+    <div class="">
+      <div class="font-bold text-lg">Dashboard</div>
+      <div class="text-sm font-light mt-2">{{ date | date }}</div>
+    </div>
+    <div class="h-18"><app-location-dropdown></app-location-dropdown></div>
+  </div>
+  <div class="flex justify-between items-center mt-6">
+    <div class="w-5/12">
+      <app-reusable-slidable-tab [tabs]="tabs"></app-reusable-slidable-tab>
+    </div>
+    <div class="flex gap-4">
+      <div class="h-18"><app-monthly-dropdown></app-monthly-dropdown></div>
+      <div class="h-18"><app-yearly-dropdown></app-yearly-dropdown></div>
+    </div>
+  </div>
+</div>

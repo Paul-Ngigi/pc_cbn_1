@@ -1,0 +1,31 @@
+<div class="w-12/12">
+  <div class="head-tabS">
+    <div class="pt-8 w-96">
+      <app-reusable-slidable-tab
+        [tabs]="tabs"
+        (tabIndexEmitter)="tabChange($event)"
+      ></app-reusable-slidable-tab>
+    </div>
+
+    <div class="uc-tab-contenT">
+      <div *ngIf="activatedTabIndex == 0">
+        <div class="mt-8">
+          <app-overview></app-overview>
+        </div>
+      </div>
+
+      <div *ngIf="activatedTabIndex == 1">
+        <div class="mt-8">
+          <app-follow-up></app-follow-up>
+        </div>
+      </div>
+
+      <div *ngIf="activatedTabIndex == 2">
+        <div class="mt-4">
+          <app-track></app-track>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

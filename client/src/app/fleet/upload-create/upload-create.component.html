@@ -1,0 +1,43 @@
+<div class="w-11/12 p-10">
+  <div class="flex gap-16">
+    <div class="w-6/12">
+      <app-reusable-slidable-tab
+        [tabs]="tabs"
+        (tabIndexEmitter)="tabChange($event)"
+      ></app-reusable-slidable-tab>
+    </div>
+
+    <div
+      class="bg-[#D9D9D9] px-8 py-2 flex items-center gap-3 hover:cursor-pointer shadow-lg shadow-[#808080] rounded"
+      *ngIf="activatedTabIndex == 1"
+    >
+      <div><mat-icon>cloud_upload</mat-icon></div>
+      <div>Upload</div>
+    </div>
+    <div
+      class="bg-[#62B846] text-white px-8 py-2 flex items-center gap-3 hover:cursor-pointer shadow-lg shadow-[#808080] rounded"
+      *ngIf="activatedTabIndex == 1"
+    >
+      <div><mat-icon>add</mat-icon></div>
+      <div>Create Folder</div>
+    </div>
+  </div>
+
+  <div class="uc-tab-contenT">
+    <div *ngIf="activatedTabIndex == 0">
+      <app-vehicles></app-vehicles>
+    </div>
+
+    <div *ngIf="activatedTabIndex == 1">
+      <div>
+        <app-full-emission-cards></app-full-emission-cards>
+      </div>
+      <div class="mt-4">
+        <app-report-table></app-report-table>
+      </div>
+    </div>
+    <div *ngIf="activatedTabIndex == 2">
+      <app-upload-vehicle></app-upload-vehicle>
+    </div>
+  </div>
+</div>

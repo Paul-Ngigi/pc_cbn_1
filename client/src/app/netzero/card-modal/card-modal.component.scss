@@ -1,0 +1,11 @@
+textarea, input, select {
+    width: 100%
+  }
+  .form-button {
+    display:flex;
+    justify-content: space-between;
+  }
+
+  .form-button button{
+    background: #00ac63;
+  }

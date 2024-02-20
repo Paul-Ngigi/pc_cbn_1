@@ -1,0 +1,30 @@
+<div class="rate-wrappeR">
+    <div class="rate-containeR">
+        <h1>Rating Breakdown</h1>
+    </div>
+    <div class="rate-paR">
+        <div class="empty-diV1"></div>
+        <div class="empty-diV1"></div>
+    </div>
+    <hr>
+    <div class="offuset-droP">
+        <h1 class="offuseT">Offset</h1>
+        <mat-form-field class="custom-select">
+            <mat-label>Scope</mat-label>
+            <mat-select [(value)]="selectedOption">
+              <mat-option *ngFor="let option of options" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>      
+          
+    </div>
+    <div class="rate-paR">
+        <div class="empty-diV1">tCO2</div>
+        <div class="empty-diV1">$</div>
+    </div>
+    <div class="rate-buttoN">
+        <button class="buttoN1" type="button">Checkout</button>
+    </div>
+</div>
+

@@ -1,0 +1,52 @@
+name: saastain-client-prod
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env:
+  PROJECT_ID: ${{ secrets.SAASTAIN_CLOUD_RUN_PROJECT_NAME }}
+  REGION: europe-west1
+  REPO: saastain-client-prod
+
+jobs:
+  build-and-deploy:
+    name: Setup, Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0
+        with:
+          project_id: ${{ env.PROJECT_ID }}
+          service_account_key: ${{ secrets.SAASTAIN_GCP_SA_KEY }}
+          export_default_credentials: true
+
+      # Authorize Docker Push
+
+      - name: Authorize Docker Push
+        run: gcloud auth configure-docker europe-west1-docker.pkg.dev
+
+      # Build and push the image
+      - name: Build and Tag Docker Image
+        run: |
+          docker build -t europe-west1-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO }}/saastain-client-prod:latest .
+          docker tag europe-west1-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO }}/saastain-client-prod:latest europe-west1-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO }}/saastain-client-prod:${{ github.sha }}
+          docker push europe-west1-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO }}/saastain-client-prod:${{ github.sha }}
+          docker push europe-west1-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO }}/saastain-client-prod:latest
+
+      # Deploy to Cloud Run
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy saastain-client-prod \
+          --image europe-west1-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO }}/saastain-client-prod:${{ github.sha }} \
+          --platform managed \
+          --region ${{ env.REGION }} \
+          --quiet

@@ -1,0 +1,142 @@
+<div class="containeR">
+  <div class="flex justify-between items-center">
+    <div class="font-medium text-lg">Manage Team Member</div>
+    <div
+      class="flex gap-3 border border-black rounded-full bg-transparent items-center justify-center px-2 py-1 focus:outline-none"
+    >
+      <div class="hover:cursor-pointer"><mat-icon>search</mat-icon></div>
+      <input
+        type="text"
+        class="border-none bg-transparent w-32 focus:outline-none"
+        placeholder="Search"
+      />
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <table class="min-w-full table-fixed rounded border-none">
+      <thead class="bg-black text-white dark:bg-dark-700 rounded">
+        <tr class="text-center">
+          <th
+            scope="col"
+            class="py-3 px-6 text-xs font-medium tracking-wider text-center text-white uppercase"
+          >
+            Name
+          </th>
+          <th
+            scope="col"
+            class="py-3 px-6 text-xs font-medium tracking-wider text-center text-white uppercase"
+          >
+            Division
+          </th>
+          <th
+            scope="col"
+            class="py-3 px-6 text-xs font-medium tracking-wider text-center text-white uppercase"
+          >
+            Access Level
+          </th>
+          <th
+            scope="col"
+            class="py-3 px-6 text-xs font-medium tracking-wider text-center text-white uppercase"
+          >
+            Email
+          </th>
+
+          <th
+            scope="col"
+            class="py-3 px-6 text-xs font-medium tracking-wider text-center text-white uppercase"
+          >
+            Assign Role
+          </th>
+
+          <th
+            scope="col"
+            class="py-3 px-6 text-xs font-medium tracking-wider text-center text-white uppercase"
+          >
+            Status
+          </th>
+        </tr>
+      </thead>
+      <tbody class="bg-transparent border-none" *ngFor="let report of reports">
+        <tr class="">
+          <td
+            class="py-4 px-6 text-sm font-medium text-center text-gray-900 whitespace-nowrap organizE"
+          >
+            <img src="{{ report.image }}" alt="" />
+            {{ report.name }}
+          </td>
+          <td
+            class="py-4 px-6 text-sm font-medium text-center text-gray-900 whitespace-nowrap"
+          >
+            {{ report.division }}
+          </td>
+          <td
+            class="py-4 px-6 text-sm font-medium text-center text-gray-900 whitespace-nowrap"
+          >
+            {{ report.accessLevel }}
+          </td>
+          <td
+            class="py-4 px-6 text-sm font-medium text-center whitespace-nowrap"
+          >
+            {{ report.email }}
+          </td>
+
+          <td
+            class="mt-4 py-4 px-6 text-sm font-medium text-center whitespace-nowrap"
+          >
+            <div
+              class="bg-white rounded-full px-4 py-1 flex justify-center hover:cursor-pointer"
+            >
+              <mat-icon class="text-xm">add_circle_outline</mat-icon>
+            </div>
+          </td>
+
+          <td
+            class="py-4 px-6 text-sm font-medium text-center whitespace-nowrap"
+          >
+            <div class="bg-white rounded-full px-4 py-1 flex justify-center">
+              <div class="text-xm">{{ report.status }}</div>
+            </div>
+          </td>
+
+          <td
+            class="py-4 px-6 text-sm font-medium text-center whitespace-nowrap"
+          >
+            <i class="fa-solid fa-trash hover:cursor-pointer"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div
+      class="bg-black rounded flex text-[#34B206] gap-4 items-center py-1 px-6 w-32 mt-24 hover:cursor-pointer"
+    >
+      <div><mat-icon>add_circle_outline</mat-icon></div>
+      <div>Add</div>
+    </div>
+  </div>
+
+  <!-- <div class="flex flex-col">
+    <div class="overflow-x-auto shadow-md sm:rounded-lg">
+      <div class="inline-block min-w-full align-middle">
+        <div class="overflow-hidden">
+          <button class="buttoN adD">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              viewBox="0 0 53 53"
+              fill="none"
+            >
+              <path
+                d="M29.15 23.85H39.75V29.15H29.15V39.75H23.85V29.15H13.25V23.85H23.85V13.25H29.15V23.85ZM26.5 53C19.4718 53 12.7314 50.208 7.76167 45.2383C2.79196 40.2686 0 33.5282 0 26.5C0 19.4718 2.79196 12.7314 7.76167 7.76167C12.7314 2.79196 19.4718 0 26.5 0C33.5282 0 40.2686 2.79196 45.2383 7.76167C50.208 12.7314 53 19.4718 53 26.5C53 33.5282 50.208 40.2686 45.2383 45.2383C40.2686 50.208 33.5282 53 26.5 53ZM26.5 47.7C32.1226 47.7 37.5149 45.4664 41.4907 41.4907C45.4664 37.5149 47.7 32.1226 47.7 26.5C47.7 20.8774 45.4664 15.4851 41.4907 11.5093C37.5149 7.53357 32.1226 5.3 26.5 5.3C20.8774 5.3 15.4851 7.53357 11.5093 11.5093C7.53357 15.4851 5.3 20.8774 5.3 26.5C5.3 32.1226 7.53357 37.5149 11.5093 41.4907C15.4851 45.4664 20.8774 47.7 26.5 47.7Z"
+                fill="#34B206"
+              />
+            </svg>
+            Add
+          </button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>

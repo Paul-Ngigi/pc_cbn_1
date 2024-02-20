@@ -1,0 +1,7 @@
+<div class="uc-tabS">
+  <ul>
+      <li *ngFor="let tab of tabs; let i = index;">
+          <a [ngClass]="{'activE': view_tab === 'tab_'+i}" class="text-sm" (click)="changeTab('tab_'+i)">{{tab}}</a>
+      </li>
+  </ul>  
+</div>

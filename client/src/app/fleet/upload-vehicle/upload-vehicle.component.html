@@ -1,0 +1,103 @@
+<div>
+  <div class="text-lg font-bold text-center">Vehicle</div>
+  <div class="text-base font-medium text-center color_greY">
+    Create and manage fleet vehicles
+  </div>
+  <form [formGroup]="vehicleFormGroup" class="w-full">
+    <div class="grid grid-cols-2 gap-3 mt-4">
+      <div>
+        <label for="fuelType" class="text-black font-medium"
+          >Vehicle Make</label
+        >
+        <br />
+        <select
+          id="vehicleMake"
+          class="bg-white text-black rounded-md p-3 w-full focus:outline-none focus:border focus:border-[#34B206]"
+        >
+          <option value="us">Select Vehicle Make</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="country" class="text-black font-medium">Country</label>
+        <br />
+        <select id="country" class="bg-white text-black rounded-md p-3 w-full focus:outline-none focus:border focus:border-[#34B206]">
+          <option value="us">Germany</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3 mt-6">
+      <div>
+        <label for="engineCapacity" class="text-black font-medium"
+          >Engine Capacity</label
+        >
+        <br />
+        <input
+          id="engineCapacity"
+          type="text"
+          class="bg-white text-black rounded-md p-3 w-full focus:outline-none focus:border focus:border-[#34B206]"
+          placeholder="1200CC"
+        />
+      </div>
+
+      <div>
+        <label for="date" class="text-black font-medium">Date</label>
+        <br />
+        <input
+          id="date"
+          type="date"
+          class="bg-white text-black rounded-md p-3 w-full focus:outline-none focus:border focus:border-[#34B206]"
+          placeholder="dd/mm/YY"
+        />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3 mt-6">
+      <div>
+        <label for="vehicleModel" class="text-black font-medium"
+          >Vehicle Model</label
+        >
+        <br />
+        <select
+          id="vehicleModel"
+          class="bg-white text-black rounded-md p-3 w-full focus:outline-none focus:border focus:border-[#34B206]"
+        >
+          <option value="vehicleModel">Select Vehicle Model</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="registrationNo" class="text-black font-medium"
+          >Registration Number</label
+        >
+        <br />
+        <input
+          id="registrationNo"
+          type="text"
+          class="bg-white text-black rounded-md p-3 w-full focus:outline-none focus:border focus:border-[#34B206]"
+          placeholder="KDK 426G"
+        />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3 mt-6">
+      <div>
+        <label for="fuelType" class="text-black font-medium">Fuel Type</label>
+        <br />
+        <input
+          id="fuelType"
+          type="text"
+          class="bg-white text-black rounded-md p-3 w-full focus:outline-none focus:border focus:border-[#34B206]"
+          placeholder="Diesel"
+        />
+      </div>
+    </div>
+
+    <button
+      class="bg-black text-white px-4 py-2 rounded-md mt-6 col-span-2 w-48"
+    >
+      Add Vehicle
+    </button>
+  </form>
+</div>

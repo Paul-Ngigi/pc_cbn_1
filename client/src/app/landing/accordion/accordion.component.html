@@ -1,0 +1,17 @@
+
+<div class="grid grid-cols-2 gap-[24px]">
+  <div class="w-[30rem] accord" *ngFor="let item of toggleItems; let index = index">
+    <div
+    (click)="toggleItem(index)" class="flex justify-between hover:cursor-pointer py-6 px-6 text-[#5E896E] bg-[#FCF5EB] rounded-[9px]  shadow-sm text-base font-medium"
+    >
+      <div>
+        {{ item.question }}
+      </div>
+      <div *ngIf="item.open">-</div>
+      <div *ngIf="!item.open">+</div>
+    </div>
+    <div *ngIf="item.open" class="bg-[#FCF5EB] text-[#5E896E] px-4 py-6   rounded-  rounded-b-lg shadow-md">
+      {{item.answer}}
+    </div>
+  </div>
+</div>

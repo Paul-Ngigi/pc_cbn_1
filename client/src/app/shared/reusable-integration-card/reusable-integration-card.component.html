@@ -1,0 +1,21 @@
+<div class="fuel-carD">
+  <div class="card-contenT">
+    <div class="branD">
+      <div class="logO">
+        <img src="{{ company.logo }}" />
+      </div>
+
+      <div class="namE">{{ company.name }}</div>
+    </div>
+
+    <div class="line-onE"><hr /></div>
+
+    <div class="contenT">
+      {{ company.description }}
+    </div>
+
+    <button class="btn-onE" (click)="makeApiRequest(company.logo)">
+      Request API Call
+    </button>
+  </div>
+</div>

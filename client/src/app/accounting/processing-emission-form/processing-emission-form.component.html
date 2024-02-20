@@ -1,0 +1,283 @@
+<div>
+  <app-add-data></app-add-data>
+  <!-- Top Section -->
+  <div class="mt-8 bg-[#E4FCE6] px-16 py-8 rounded-lg" *ngIf="!confirmModal">
+    <div class="text-lg font-bold">Process Emissions</div>
+    <div class="mt-8 text-sm text-[#1F2937]">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+      laboriosam facilis vero cumque temporibus, molestias asperiores cupiditate
+      sit repellat aliquam enim! Accusantium eum error sit. Quos ab obcaecati
+      rerum esse.
+    </div>
+    <div
+      class="mt-8 flex gap-3 hover:cursor-pointer"
+      (click)="toggleView('guide')"
+    >
+      <div class="text-[#5E896E] text-sm">>></div>
+      <div class="text-[#5E896E] text-sm hover:underline">View Guides</div>
+    </div>
+    <div *ngIf="guidesActive" @fadeInOut>
+      <div *ngFor="let guide of guides">
+        <div class="flex gap-3 px-16 py-2">
+          <img src="/assets/svgs/Leaf.svg" alt="" />
+          <div>{{ guide }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <form
+      class="mt-8"
+      [formGroup]="processEmissionFormGroup"
+      (submit)="prepareConfirmObj()"
+    >
+      <div class="mb-4 gap-8">
+        <div
+          class="flex items-center gap-4 px-4 py-2 border border-[#CFD3D4] rounded-lg w-full"
+        >
+          <div>
+            <mat-icon>date_range</mat-icon>
+          </div>
+          <div>
+            <div class="text-xm text-[#CFD3D4]">Date</div>
+            <input
+              type="date"
+              class="date-input border-none focus:outline-none text-[#CFD3D4] placeholder:text-xs bg-[#E4FCE6] w-full"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="mb-4 md:grid md:grid-cols-2 gap-8">
+        <div>
+          <div class="text-sm text-[#1F2937]">Process Type</div>
+          <div class="mt-2">
+            <div
+              class="flex justify-between px-4 py-2 border border-[#CFD3D4] rounded-lg hover:cursor-pointer items-center text-sm w-full"
+              (click)="toggleView('emission_source')"
+            >
+              <div class="text-[#ABAFB1]">
+                {{ selectedEmissionSource }}
+              </div>
+              <div><mat-icon>arrow_drop_down</mat-icon></div>
+            </div>
+            <div
+              class="px-4 py-2 bg-[#ffffff] mt-4 max-h-40 overflow-y-scroll"
+              *ngIf="emissionSourceActive"
+              @fadeInOut
+            >
+              <ul
+                *ngFor="let emissionSource of emissionSources; let idx = index"
+              >
+                <li
+                  class="hover:bg-[#5E896E] hover:cursor-pointer hover:text-[#ffffff] rounded-lg px-3 py-2 w-full"
+                  (click)="submitEmissionSource(idx)"
+                >
+                  {{ emissionSource }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="mt-1 text-xs text-[#d90429]"
+            *ngIf="!selectedEmissionSource && emissionSourceTouched"
+          >
+            *Field is required
+          </div>
+        </div>
+        <div>
+          <div class="text-sm text-[#1F2937]">Process Emission Name</div>
+          <div class="mt-2">
+            <div
+              class="flex justify-between px-4 py-2 border border-[#CFD3D4] rounded-lg hover:cursor-pointer items-center text-sm w-full"
+              (click)="toggleView('equiment_name')"
+            >
+              <div class="text-[#ABAFB1]">
+                {{ selectedEquipmentName }}
+              </div>
+              <div><mat-icon>arrow_drop_down</mat-icon></div>
+            </div>
+            <div
+              class="px-4 py-2 bg-[#ffffff] mt-4 max-h-40 overflow-y-scroll"
+              *ngIf="equipmentNameActive"
+              @fadeInOut
+            >
+              <ul *ngFor="let equipmentName of emissionNames; let idx = index">
+                <li
+                  class="hover:bg-[#5E896E] hover:cursor-pointer hover:text-[#ffffff] rounded-lg px-3 py-2 w-full"
+                  (click)="submitEquipmentName(idx)"
+                >
+                  {{ equipmentName }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="mt-1 text-xs text-[#d90429]"
+            *ngIf="!selectedEquipmentName && equipmentNameTouched"
+          >
+            *Field is required
+          </div>
+        </div>
+      </div>
+      <div class="mb-4 md:grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div>
+          <div class="text-sm text-[#1F2937]">Waste Gas</div>
+          <div class="mt-2">
+            <div
+              class="flex justify-between px-4 py-2 border border-[#CFD3D4] rounded-lg hover:cursor-pointer items-center text-sm w-full"
+              (click)="toggleView('fuel_type')"
+            >
+              <div class="text-[#ABAFB1]">
+                {{ selectedFuelType }}
+              </div>
+              <div><mat-icon>arrow_drop_down</mat-icon></div>
+            </div>
+            <div
+              class="px-4 py-2 bg-[#ffffff] mt-4 max-h-40 overflow-y-scroll"
+              *ngIf="fuelTypeActive"
+              @fadeInOut
+            >
+              <ul *ngFor="let fuelType of wasteGases; let idx = index">
+                <li
+                  class="hover:bg-[#5E896E] hover:cursor-pointer hover:text-[#ffffff] rounded-lg px-3 py-2 w-full"
+                  (click)="submitFuelType(idx)"
+                >
+                  {{ fuelType }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="mt-1 text-xs text-[#d90429]"
+            *ngIf="!selectedFuelType && fuelTypeTouched"
+          >
+            *Field is required
+          </div>
+        </div>
+        <div class="mb-4">
+          <div class="text-sm text-[#1F2937]">Unit of Emission</div>
+          <div class="mt-2">
+            <div
+              class="flex justify-between px-4 py-2 border border-[#CFD3D4] rounded-lg hover:cursor-pointer items-center text-sm w-full"
+              (click)="toggleView('fuel_unit')"
+            >
+              <div class="text-[#ABAFB1]">
+                {{ selectedFuelUnit }}
+              </div>
+              <div><mat-icon>arrow_drop_down</mat-icon></div>
+            </div>
+            <div
+              class="px-4 py-2 bg-[#ffffff] mt-4 max-h-40 overflow-y-scroll"
+              *ngIf="fuelUnitActive"
+              @fadeInOut
+            >
+              <ul *ngFor="let fuelUnit of fuelUnits; let idx = index">
+                <li
+                  class="hover:bg-[#5E896E] hover:cursor-pointer hover:text-[#ffffff] rounded-lg px-3 py-2 w-full"
+                  (click)="submitFuelUnit(idx)"
+                >
+                  {{ fuelUnit }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="mt-1 text-xs text-[#d90429]"
+            *ngIf="!selectedFuelUnit && fuelUnitTouched"
+          >
+            *Field is required
+          </div>
+        </div>
+        <div class="mb-4">
+          <div class="text-sm text-[#1F2937]">Amount of waste gas</div>
+          <div class="mt-2">
+            <input
+              type="number"
+              class="px-4 py-3 border border-[#CFD3D4] rounded-lg text-sm w-full focus:outline-none bg-[#E4FCE6] text-[#1F2937]"
+              formControlName="fuelAmount"
+              required
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-4 items-center mt-8">
+        <div>
+          <button
+            *ngIf="isLoading"
+            class="border border-[#CFD3D4] bg-[#5E896E] px-4 py-2 rounded-lg flex items-center justify-center gap-3 text-[#ffffff] h-12 w-32"
+          >
+            <app-loader></app-loader>
+          </button>
+          <button
+            *ngIf="!isLoading"
+            class="border border-[#CFD3D4] bg-[#5E896E] px-4 py-2 rounded-lg flex items-center gap-3 text-[#ffffff]"
+            type="submit"
+          >
+            <mat-icon>check</mat-icon>
+            Continue
+          </button>
+        </div>
+        <div>
+          <button
+            class="border border-[#5E896E] px-4 py-2 rounded-lg flex items-center gap-3 text-[#5E896E]"
+            (click)="cancel()"
+          >
+            <mat-icon>close</mat-icon>
+            Cancel
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="confirmModal">
+    <div class="bg-[#fff] px-16 py-8 rounded-lg shadow-lg mt-8 xl:w-[60rem]">
+      <div class="text-lg font-bold">Confirm Accounting Data</div>
+      <div class="mt-4 bg-[#5E896E] px-4 py-3 grid grid-cols-2">
+        <div class="text-[#fff] text-xs">Field</div>
+        <div class="text-[#fff] text-xs">Value</div>
+      </div>
+      <div *ngFor="let detail of confirmDetails">
+        <div class="bg-[#F9FAFB] px-4 py-3">
+          <div class="text-[#000] text-sm font-medium">
+            {{ detail.title | titlecase }}
+          </div>
+        </div>
+        <div *ngFor="let item of detail.items">
+          <div class="px-4 py-3 grid grid-cols-2">
+            <div class="text-xs">{{ item.field | titlecase }}</div>
+            <div class="text-xs">{{ item.value }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-end gap-4 items-center mt-8">
+        <div>
+          <button
+            *ngIf="isLoading"
+            class="border border-[#CFD3D4] bg-[#5E896E] px-4 py-2 rounded-lg flex items-center justify-center gap-3 text-[#ffffff] h-12 w-32"
+          >
+            <app-loader></app-loader>
+          </button>
+          <button
+            *ngIf="!isLoading"
+            class="border border-[#CFD3D4] bg-[#5E896E] px-4 py-2 rounded-lg flex items-center gap-3 text-[#ffffff]"
+            (click)="submitAllFields()"
+          >
+            <mat-icon>check</mat-icon>
+            Confirm
+          </button>
+        </div>
+        <div>
+          <button
+            class="border border-[#5E896E] px-4 py-2 rounded-lg flex items-center gap-3 text-[#5E896E]"
+            (click)="edit()"
+          >
+            <mat-icon>edit</mat-icon>
+            Edit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
